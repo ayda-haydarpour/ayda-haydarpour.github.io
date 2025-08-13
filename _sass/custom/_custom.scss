@@ -1,54 +1,28 @@
-/* ===== Option 2: Centered Hero (home only) ===== */
+/* Hero */
+.home-landing .hero-landing {
+  background: linear-gradient(135deg,#5aa9f4,#39d2c0);
+  color:#fff; border-radius:16px; padding:40px 28px 30px; margin-bottom:28px;
+}
+.hero-inner { max-width: 980px; margin: 0 auto; text-align: center; }
+.hero-title { font-size: 40px; line-height: 1.1; margin: 0 0 6px; }
+.hero-subtitle { font-size: 18px; margin: 0 0 12px; opacity: .95; }
+.hero-intro { max-width: 680px; margin: 0 auto 16px; opacity: .95; }
+.hero-cta { display: inline-flex; gap: 12px; margin-top: 6px; }
 
-.home-landing .page__content { padding-top: 0; }
+/* Buttons (uses Minimal Mistakes look) */
+.btn--outline { background: #fff; color: #1f2937; border: 1px solid rgba(255,255,255,.5); }
 
-/* full-width hero band */
-.hero-landing {
-  margin: -1.5rem -1.5rem 1.25rem; /* pull to edges of content container */
-  padding: 3rem 1.5rem;
-  background: linear-gradient(180deg, rgba(11,60,93,.06), rgba(11,60,93,0));
-  border-bottom: 1px solid $border-color;
+/* Skills card (two columns like your screenshot) */
+.skills-card {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+  background:#fff; border:1px solid #eee; border-radius:18px; padding:24px;
+  box-shadow: 0 12px 24px rgba(0,0,0,.05);
 }
-.hero-landing .hero-inner {
-  max-width: 980px;
-  margin: 0 auto;
-  text-align: center;
-}
-.hero-title {
-  font-family: $header-font-family;
-  font-size: 2.2rem;
-  margin: 0 0 .5rem;
-}
-.hero-subtitle {
-  font-size: 1.05rem;
-  line-height: 1.65;
-  margin: 0 auto 1rem;
-  max-width: 60ch;
-}
-.hero-cta { display: inline-flex; gap: .6rem; flex-wrap: wrap; }
+.skills-card h3 { margin: 8px 0 6px; font-size: 20px; }
+.skills-card ul { margin: 0 0 10px 18px; }
+.skills-card li { line-height: 1.6; }
 
-/* sections */
-.section { margin: 1rem 0; }
-.section-tight { padding: 1rem 1rem 1.2rem; }
-.section-header {
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: 1rem; margin-bottom: .5rem;
+@media (max-width: 780px) {
+  .hero-title { font-size: 32px; }
+  .skills-card { grid-template-columns: 1fr; }
 }
-.section-header h2 { margin: 0; }
-.section-link { font-size: .95rem; border-bottom: 1px solid rgba($link-color, .25); }
-
-/* skill pills */
-.pill-list {
-  display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0;
-  list-style: none;
-}
-.pill-list li {
-  border: 1px solid $border-color; background: #fff;
-  border-radius: 999px; padding: .45rem .7rem; font-size: .9rem; color: $muted-text-color;
-}
-
-/* media links */
-.link-list { margin: 0; padding-left: 1.1rem; }
-.link-list li { margin: .35rem 0; }
-
-/* keep your existing grid and panel styles below… */
