@@ -26,6 +26,7 @@ h1, h2, h3, h4 {
 .sidebar {
   background: transparent;
   border-right: 1px solid $border-color;
+  max-width: 260px; /* comfortable width */
 }
 
 /* Content spacing */
@@ -76,6 +77,12 @@ img { max-width: 100%; height: auto; }
   border-radius: 12px;
   padding: 1rem;
   background: #fff;
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.entries-grid .archive__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  border-color: rgba(0,0,0,.06);
 }
 .entries-grid .archive__item-title {
   font-size: 1.15rem;
@@ -84,3 +91,71 @@ img { max-width: 100%; height: auto; }
 .entries-grid .archive__item-excerpt {
   margin-bottom: .75rem;
 }
+
+/* --- polish pass --- */
+
+/* Make primary buttons navy (the skin’s default is gray) */
+.btn--primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: #fff;
+}
+.btn--primary:hover {
+  background-color: darken($primary-color, 6%);
+  border-color: darken($primary-color, 6%);
+  color: #fff;
+}
+
+/* Slightly smaller hero/lead paragraph for a cleaner first impression */
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 60ch; /* keeps lines readable */
+}
+
+/* Page title a touch smaller and tighter */
+.page__title {
+  font-size: 1.75rem; /* down from our type scale */
+  margin-bottom: .75rem;
+}
+
+/* Navigation: brand navy links, no underline on hover */
+.masthead, .greedy-nav {
+  background: transparent;
+}
+.greedy-nav a,
+.greedy-nav .visible-links a {
+  color: $link-color;
+  border-bottom: none;
+}
+.greedy-nav a:hover {
+  color: $link-color-hover;
+}
+
+/* Table styling (if you add any) */
+table {
+  border: 1px solid $border-color;
+  border-collapse: separate;
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  border-bottom: 1px solid $border-color;
+}
+tr:last-child td { border-bottom: 0; }
+
+/* Code blocks (if you add snippets later) */
+.highlighter-rouge,
+.highlight {
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.05);
+}
+
+/* Notices spacing */
+.notice--primary p,
+.notice--info p {
+  margin: .5rem 0;
+}
+
+/* Image alignment helpers (used in your project page) */
+.align-center { display: block; margin-left: auto; margin-right: auto; }
