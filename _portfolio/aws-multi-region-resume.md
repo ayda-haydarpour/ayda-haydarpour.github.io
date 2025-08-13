@@ -56,4 +56,4 @@ This project delivers a **static resume site** with **secure access control**, *
 ---
 
 ## Links
-- **Live demo:** https://<your-cloudfront-domain>
+- **Live demo:** [https://<your-cloudfront-domain>](https://youtu.be/60pCkb77k8s)
