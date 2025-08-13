@@ -17,12 +17,13 @@ sidebar:
       - **Email:** [aydahaydarpour@gmail.com](mailto:aydahaydarpour@gmail.com)
       - **GitHub:** [ayda-hdp](https://github.com/ayda-hdp)
 
-# Single featured card
+# Featured card (left sidebar stays visible)
 feature_row:
   - image_path: /assets/images/secure-resume-arch.png
     alt: "AWS Multi-Region Resume architecture"
     title: "AWS Multi-Region Resume Site"
     excerpt: "Secure, globally distributed static site with failover, access control, and CI/CD."
+    # Use the SAME path as the project's permalink above (project site needs baseurl at runtime)
     url: "/aydahaydarpour.github.io/portfolio/aws-multi-region-resume/"
     btn_label: "View"
     btn_class: "btn--primary"
