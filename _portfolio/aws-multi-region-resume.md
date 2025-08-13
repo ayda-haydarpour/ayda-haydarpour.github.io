@@ -3,9 +3,12 @@ title: "AWS Multi-Region Resume Site"
 excerpt: "Secure, globally distributed static site with failover, access control, and CI/CD."
 date: 2025-08-01
 tags: [AWS, Security, CloudFront, S3, OAC, CI/CD]
+
+# Images used on the card and header
 header:
   image: /assets/images/secure-resume-arch.png
   image_description: "Architecture diagram"
+teaser: /assets/images/secure-resume-arch.png
 ---
 
 This project delivers a **static resume site** with **secure access control**, **multi-region failover**, and **automated deployments** from GitHub.
@@ -37,7 +40,8 @@ This project delivers a **static resume site** with **secure access control**, *
   2. Invalidates CloudFront to push updates live.
 
 ## Architecture
-![Architecture Diagram]({{ '/assets/images/diagram.png' | relative_url }})
+![Architecture Diagram]({{ '/assets/images/secure-resume-arch.png' | relative_url }})
 
 ## Links
+- **Repo:** <https://github.com/ayda-hdp/secure-resume-delivery>  
 - **Live demo:** https://<your-cloudfront-domain>
