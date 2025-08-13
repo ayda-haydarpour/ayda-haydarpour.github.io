@@ -6,26 +6,23 @@ excerpt: "Secure, globally distributed static site with failover, access control
 date: 2025-08-01
 tags: [AWS, Security, CloudFront, S3, OAC, CI/CD]
 
-# Show the left sidebar profile on this page
 author_profile: true
+sidebar:
+  - title: "Skills"
+    text: |
+      - **Cloud Services:** AWS (EC2, S3, RDS, VPC, Route 53, CloudFront, IAM, CloudWatch, Auto Scaling, Load Balancing)
+      - **Security & Networking:** IAM policies & access control, network security, VPNs & firewalls, data encryption & hashing, monitoring & logging, Security+ best practices
+      - **Programming & Scripting:** Python, Java, C, Bash, JavaScript, HTML/CSS, SQL
+      - **Tools & Platforms:** Linux, Git & GitHub, Wireshark, system monitoring tools
+  - title: "Contact"
+    text: |
+      - **Email:** [aydahaydarpour@gmail.com](mailto:aydahaydarpour@gmail.com)
 
-# Improve navigation/readability
-toc: true
-toc_sticky: true
-
-# Override collection default (“wide”) to a normal reading width
 classes: ""
-
-# Keep a teaser for cards, but no giant header hero
 teaser: /assets/images/diagram.png
 ---
 
 > A static resume site with **secure access control**, **multi-region failover**, and **automated deployments** from GitHub.
-
----
-
-## Demo (YouTube)
-{% include video id="60pCkb77k8s" provider="youtube" %}
 
 ---
 
@@ -37,7 +34,7 @@ teaser: /assets/images/diagram.png
 
 ---
 
-## Architecture (overview)
+## Architecture
 
 ![Architecture Diagram]({{ '/assets/images/diagram.png' | relative_url }}){: .align-center width="760" }
 
@@ -80,6 +77,7 @@ teaser: /assets/images/diagram.png
 
 ---
 
-## Links
-- **Repo:** <https://github.com/ayda-hdp/secure-resume-delivery>  
-- **Live demo:** https://\<your-cloudfront-domain\>
+## Demo
+{% include video id="60pCkb77k8s" provider="youtube" %}
+
+
