@@ -9,9 +9,9 @@ permalink: /portfolio/aws-multi-region-resume/
 
 # Card + header images
 header:
-  image: /assets/images/secure-resume-arch.png
+  image: /assets/images/diagram.png
   image_description: "Architecture diagram"
-teaser: /assets/images/secure-resume-arch.png
+teaser: /assets/images/diagram.png
 ---
 
 This project delivers a **static resume site** with **secure access control**, **multi-region failover**, and **automated deployments** from GitHub.
