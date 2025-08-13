@@ -1,7 +1,8 @@
 title: "Ayda Haydarpour"
 description: "Cloud & Security • AWS • Systems"
 url: "https://ayda-hdp.github.io"
-baseurl: "/aydahaydarpour.github.io"   # project site = repo name, with leading slash
+baseurl: "/aydahaydarpour.github.io"
+
 
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 minimal_mistakes_skin: "default"
