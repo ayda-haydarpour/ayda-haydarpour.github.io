@@ -51,10 +51,9 @@ This project delivers a **static resume site** with **secure access control**, *
 ---
 
 ## Architecture
-![Architecture Diagram]({{ '/assets/images/secure-resume-arch.png' | relative_url }})
+![Architecture Diagram]({{ '/assets/images/diagram.png' | relative_url }})
 
 ---
 
 ## Links
-- **Repo:** <https://github.com/ayda-hdp/secure-resume-delivery>  
 - **Live demo:** https://<your-cloudfront-domain>
