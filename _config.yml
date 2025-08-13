@@ -1,7 +1,7 @@
 title: "Ayda Haydarpour"
 description: "Cloud & Security • AWS • Systems"
 url: "https://ayda-hdp.github.io"
-baseurl: "/aydahaydarpour.github.io"   # must match repo name exactly
+baseurl: ""   # user site = empty
 
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 minimal_mistakes_skin: "default"
@@ -14,28 +14,38 @@ plugins:
 include:
   - _pages
 
+# Header navigation
+nav:
+  - title: "Home"
+    url: /
+  - title: "Projects"
+    url: /portfolio/
+  - title: "Media"
+    url: /media/
+
 collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
 
+# Defaults: consistent left sidebar, narrower reading width
 defaults:
   - scope:
       path: ""
-      type: portfolio
+      type: "pages"
     values:
       layout: single
-      author_profile: false
-      classes: wide
+      author_profile: true
+      classes: ""
+  - scope:
+      path: ""
+      type: "portfolio"
+    values:
+      layout: single
+      author_profile: true
+      classes: ""
       share: false
       related: false
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: false
-      classes: wide
 
 author:
   name: "Ayda Haydarpour"
@@ -47,8 +57,8 @@ author:
     - "**Programming & Scripting:** Python, Java, C, Bash, JavaScript, HTML/CSS, SQL"
     - "**Tools & Platforms:** Linux, Git & GitHub, Wireshark, system monitoring tools"
 
-# Optional: hide the RSS feed link in footer
 atom_feed:
   hide: true
+
 footer:
   links: []
