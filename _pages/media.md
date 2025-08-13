@@ -15,7 +15,6 @@ sidebar:
   - title: "Contact"
     text: |
       - **Email:** [aydahaydarpour@gmail.com](mailto:aydahaydarpour@gmail.com)
-      - **GitHub:** [ayda-hdp](https://github.com/ayda-hdp)
 ---
 
 ## Major Features
