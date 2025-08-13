@@ -1,0 +1,86 @@
+/* Base */
+html, body {
+  background: $background-color;
+  color: $text-color;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba($link-color, .25);
+}
+a:hover {
+  color: $link-color-hover;
+  border-bottom-color: rgba($link-color-hover, .5);
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  letter-spacing: 0;
+  margin-top: 1.2rem;
+  margin-bottom: .6rem;
+  color: $text-color;
+}
+
+/* Left sidebar divider */
+.sidebar {
+  background: transparent;
+  border-right: 1px solid $border-color;
+}
+
+/* Content spacing */
+.page__content { padding-top: 0.5rem; }
+
+/* Buttons */
+.btn, .btn--primary {
+  border-radius: $btn-border-radius;
+  box-shadow: none;
+}
+
+/* Featured teaser + images */
+.feature__wrapper img,
+.archive__item-teaser img {
+  border-radius: 12px;
+  box-shadow: $box-shadow;
+}
+
+/* Callouts */
+.notice--primary, .notice--info {
+  border-left: 4px solid $accent-color;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
+}
+
+/* Media chrome */
+img { max-width: 100%; height: auto; }
+.video-wrapper iframe {
+  border-radius: 12px;
+  box-shadow: $box-shadow;
+}
+
+/* Footer */
+.page__footer {
+  background: transparent;
+  border-top: 1px solid $border-color;
+}
+
+/* Portfolio list → two-column grid */
+.entries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.entries-grid .archive__item {
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+}
+.entries-grid .archive__item-title {
+  font-size: 1.15rem;
+  margin: .5rem 0 .25rem;
+}
+.entries-grid .archive__item-excerpt {
+  margin-bottom: .75rem;
+}
