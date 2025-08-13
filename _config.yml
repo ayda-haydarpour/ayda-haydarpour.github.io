@@ -22,6 +22,8 @@ nav:
     url: /aydahaydarpour.github.io/portfolio/
   - title: "Media"
     url: /aydahaydarpour.github.io/media/
+  - title: "Contact"
+    url: mailto:aydahaydarpour@gmail.com
 
 collections:
   portfolio:
