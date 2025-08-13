@@ -4,29 +4,28 @@ layout: single
 permalink: /portfolio/
 classes: wide
 
-# Featured cards at the top
+author_profile: true
+sidebar:
+  - title: "Skills"
+    text: |
+      - **Cloud Services:** AWS (EC2, S3, RDS, VPC, Route 53, CloudFront, IAM, CloudWatch, Auto Scaling, Load Balancing)
+      - **Security & Networking:** IAM policies & access control, network security, VPNs & firewalls, data encryption & hashing, monitoring & logging, Security+ best practices
+      - **Programming & Scripting:** Python, Java, C, Bash, JavaScript, HTML/CSS, SQL
+      - **Tools & Platforms:** Linux, Git & GitHub, Wireshark, system monitoring tools
+  - title: "Contact"
+    text: |
+      - **Email:** [aydahaydarpour@gmail.com](mailto:aydahaydarpour@gmail.com)
+      - **GitHub:** [ayda-hdp](https://github.com/ayda-hdp)
+
+# Single featured card (your current project)
 feature_row:
-  - image_path: /assets/images/diagram.png
+  - image_path: /assets/images/secure-resume-arch.png   # <-- put your diagram here
     alt: "AWS Multi-Region Resume architecture"
     title: "AWS Multi-Region Resume Site"
     excerpt: "Secure, globally distributed static site with failover, access control, and CI/CD."
-    url: "{{ '/portfolio/aws-multi-region-resume/' | relative_url }}"
+    url: "{{ '/portfolio/aws-multi-region-resume/' | relative_url }}"   # <-- slug comes from your file name in _portfolio/
     btn_label: "View"
     btn_class: "btn--primary"
-
-  - image_path: /assets/images/coming-soon.png
-    alt: "Custom Shell"
-    title: "Custom Shell (C, POSIX)"
-    excerpt: "Systems programming project — process control, piping, and APIs. Write-up coming soon."
-    url: "{{ '/portfolio/custom-shell/' | relative_url }}"
-    btn_label: "Coming soon"
-
-  - image_path: /assets/images/coming-soon.png
-    alt: "TA Kiosk"
-    title: "TA Availability Kiosk (Raspberry Pi)"
-    excerpt: "Networking + SSH + Wi-Fi config, frontend for lab availability. Write-up coming soon."
-    url: "{{ '/portfolio/ta-kiosk/' | relative_url }}"
-    btn_label: "Coming soon"
 ---
 
 {% include feature_row %}
@@ -37,4 +36,4 @@ feature_row:
    collection="portfolio"
    sort_by="date"
    sort_order="reverse"
-   entries_layout="grid" %}
+   entries_layout="list" %}
