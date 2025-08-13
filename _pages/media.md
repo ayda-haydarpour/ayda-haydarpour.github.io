@@ -2,8 +2,6 @@
 title: "Media & Recognition"
 permalink: /media/
 layout: single
-classes: wide
-
 author_profile: true
 sidebar:
   - title: "Skills"
