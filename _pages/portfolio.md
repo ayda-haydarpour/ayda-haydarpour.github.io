@@ -24,7 +24,7 @@ sidebar:
   <div class="feature__item">
     <div class="archive__item">
       <div class="archive__item-teaser">
-        <img src="{{ '/assets/images/secure-resume-arch.png' | relative_url }}" alt="AWS Multi-Region Resume architecture">
+        <img src="{{ '/assets/images/diagram.png' | relative_url }}" alt="AWS Multi-Region Resume architecture">
       </div>
       <h2 class="archive__item-title">AWS Multi-Region Resume Site</h2>
       <p class="archive__item-excerpt">Secure, globally distributed static site with failover, access control, and CI/CD.</p>
