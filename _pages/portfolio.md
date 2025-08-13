@@ -17,13 +17,13 @@ sidebar:
       - **Email:** [aydahaydarpour@gmail.com](mailto:aydahaydarpour@gmail.com)
       - **GitHub:** [ayda-hdp](https://github.com/ayda-hdp)
 
-# Single featured card (your current project)
+# Single featured card
 feature_row:
-  - image_path: /assets/images/secure-resume-arch.png   # <-- put your diagram here
+  - image_path: /assets/images/secure-resume-arch.png
     alt: "AWS Multi-Region Resume architecture"
     title: "AWS Multi-Region Resume Site"
     excerpt: "Secure, globally distributed static site with failover, access control, and CI/CD."
-    url: "{{ '/portfolio/aws-multi-region-resume/' | relative_url }}"   # <-- slug comes from your file name in _portfolio/
+    url: "/aydahaydarpour.github.io/portfolio/aws-multi-region-resume/"
     btn_label: "View"
     btn_class: "btn--primary"
 ---
@@ -32,8 +32,25 @@ feature_row:
 
 ## All Projects
 
-{% include collection
-   collection="portfolio"
-   sort_by="date"
-   sort_order="reverse"
-   entries_layout="list" %}
+{%- assign items = site.portfolio | sort: 'date' | reverse -%}
+<div class="entries-list">
+{%- for item in items -%}
+  <article class="archive__item">
+    <h2 class="archive__item-title">
+      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    </h2>
+
+    {%- if item.teaser -%}
+    <div class="archive__item-teaser">
+      <img src="{{ item.teaser | relative_url }}" alt="">
+    </div>
+    {%- endif -%}
+
+    {%- if item.excerpt -%}
+    <p class="archive__item-excerpt">
+      {{ item.excerpt | markdownify | strip_html | truncate: 180 }}
+    </p>
+    {%- endif -%}
+  </article>
+{%- endfor -%}
+</div>
