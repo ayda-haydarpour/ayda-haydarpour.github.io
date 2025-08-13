@@ -11,7 +11,7 @@ author_profile: false
 
 <p class="lead">
 I’m a Computer Science senior specializing in <strong>cloud architecture, cybersecurity, and systems development</strong>.  
-I design and deploy <strong>end-to-end solutions</strong> that are reliable, scalable, and secure — with a focus on AWS and security best practices.
+I design and deploy <strong>end-to-end solutions</strong> that are reliable, scalable, and secure with a focus on AWS and security best practices.
 </p>
 
 [View Projects]({{ '/portfolio/' | relative_url }}){: .btn .btn--primary }
