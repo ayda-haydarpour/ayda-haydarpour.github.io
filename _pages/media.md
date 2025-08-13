@@ -3,6 +3,19 @@ title: "Media & Recognition"
 permalink: /media/
 layout: single
 classes: wide
+
+author_profile: true
+sidebar:
+  - title: "Skills"
+    text: |
+      - **Cloud Services:** AWS (EC2, S3, RDS, VPC, Route 53, CloudFront, IAM, CloudWatch, Auto Scaling, Load Balancing)
+      - **Security & Networking:** IAM policies & access control, network security, VPNs & firewalls, data encryption & hashing, monitoring & logging, Security+ best practices
+      - **Programming & Scripting:** Python, Java, C, Bash, JavaScript, HTML/CSS, SQL
+      - **Tools & Platforms:** Linux, Git & GitHub, Wireshark, system monitoring tools
+  - title: "Contact"
+    text: |
+      - **Email:** [aydahaydarpour@gmail.com](mailto:aydahaydarpour@gmail.com)
+      - **GitHub:** [ayda-hdp](https://github.com/ayda-hdp)
 ---
 
 ## Major Features
@@ -19,15 +32,15 @@ classes: wide
 - **WVTF Public Radio** — [Read →](https://www.wvtf.org/news/2022-09-01/robotics-champion-fled-afghanistan-now-shes-studying-at-virginia-tech)
 
 ## International Media
-- **France 24 — Afghan Girls Robotics Team Design Their Future in Qatar** — [Read →](https://first.global/in-the-news/france-24-afghan-girls-robotics-team-design-their-future-in-qatar/)
-- **Macaroni Kid NRV — YMCA at Virginia Tech Celebrates Women in Innovation and Technology** — [Read →](https://nrv.macaronikid.com/articles/6411e7794a01232a11181e2e/ymca-at-virginia-tech-celebrates-women-in-innovation-and-technology)
-- **RFI (Radio France Internationale)** — [Read →](https://www.rfi.fr/en/business-and-tech/20210922-afghan-girls-robotics-team-design-their-future-in-qatar)
-- **Nippon.com — Afghan Girls Robotics Team Design Their Future in Qatar** — [Read →](https://www.nippon.com/en/news/reu20210827KBN2FR1JN/)
-- **Reuters — Don’t Abandon Afghanistan, Pleads Robotics Team Member** — [Read →](https://www.reuters.com/world/asia-pacific/dont-abandon-afghanistan-pleads-member-afghan-all-female-robotics-team-2021-08-26/)
-- **Al-Fanar Media — Afghan Robotics Team Continues Building Robots in Qatar** — [Read →](https://www.al-fanarmedia.org/2021/09/afghanistans-all-female-robotics-team-continues-building-robots-in-qatar/)
-- **Qatar Foundation — Gateway to a Better Life** — [Read →](https://www.qf.org.qa/stories/qatar-has-been-the-gateway-to-a-better-life-for-us-says-captain-of-afghan)
-- **Qatar Day — Don’t Abandon Afghanistan** — [Read →](https://www.qatarday.com/dont-abandon-afghanistan-pleads-member-of-afghan-all-female-robotics-team)
-- **Kuwait Times — Afghan Robotics Team Design Future in Qatar** — [Read →](https://kuwaittimes.com/afghan-robotics-team-design-future-in-qatar/)
+- **France 24** — [Read →](https://first.global/in-the-news/france-24-afghan-girls-robotics-team-design-their-future-in-qatar/)
+- **Macaroni Kid NRV** — [Read →](https://nrv.macaronikid.com/articles/6411e7794a01232a11181e2e/ymca-at-virginia-tech-celebrates-women-in-innovation-and-technology)
+- **RFI** — [Read →](https://www.rfi.fr/en/business-and-tech/20210922-afghan-girls-robotics-team-design-their-future-in-qatar)
+- **Nippon.com** — [Read →](https://www.nippon.com/en/news/reu20210827KBN2FR1JN/)
+- **Reuters** — [Read →](https://www.reuters.com/world/asia-pacific/dont-abandon-afghanistan-pleads-member-afghan-all-female-robotics-team-2021-08-26/)
+- **Al-Fanar Media** — [Read →](https://www.al-fanarmedia.org/2021/09/afghanistans-all-female-robotics-team-continues-building-robots-in-qatar/)
+- **Qatar Foundation** — [Read →](https://www.qf.org.qa/stories/qatar-has-been-the-gateway-to-a-better-life-for-us-says-captain-of-afghan)
+- **Qatar Day** — [Read →](https://www.qatarday.com/dont-abandon-afghanistan-pleads-member-of-afghan-all-female-robotics-team)
+- **Kuwait Times** — [Read →](https://kuwaittimes.com/afghan-robotics-team-design-future-in-qatar/)
 
 ## Profiles & Biographies
 - **WISE — Ayda Haydarpour Biography** — [Read →](https://www.wise-qatar.org/biography/ayda-haydarpour/)
