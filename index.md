@@ -2,7 +2,6 @@
 layout: single
 title: "Ayda Haydarpour"
 excerpt: "Cloud & Security • AWS • Systems"
-
 author_profile: true
 sidebar:
   - title: "Skills"
@@ -17,9 +16,14 @@ sidebar:
       - **GitHub:** [ayda-hdp](https://github.com/ayda-hdp)
 ---
 
-<p class="lead">
-I’m a Computer Science senior specializing in <strong>cloud architecture, cybersecurity, and systems development</strong>.  
-I design and deploy <strong>end-to-end solutions</strong> that are reliable, scalable, and secure — with a focus on AWS and security best practices.
-</p>
-
-[View Projects]({{ '/portfolio/' | relative_url }}){: .btn .btn--primary } [Media]({{ '/media/' | relative_url }}){: .btn }
+<div class="panel hero">
+  <h1>Ayda Haydarpour</h1>
+  <p class="lead">
+    I’m a Computer Science senior specializing in <strong>cloud architecture, cybersecurity, and systems development</strong>.
+    I design and deploy <strong>end-to-end solutions</strong> that are reliable, scalable, and secure — with a focus on AWS and security best practices.
+  </p>
+  <div class="cta">
+    <a class="btn btn--primary" href="{{ '/portfolio/' | relative_url }}">View Projects</a>
+    <a class="btn btn--outline" href="{{ '/media/' | relative_url }}">Media</a>
+  </div>
+</div>
