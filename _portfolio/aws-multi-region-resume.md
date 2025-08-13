@@ -4,7 +4,10 @@ excerpt: "Secure, globally distributed static site with failover, access control
 date: 2025-08-01
 tags: [AWS, Security, CloudFront, S3, OAC, CI/CD]
 
-# Images used on the card and header
+# 🔒 Fix the 404: publish this page at a stable path
+permalink: /portfolio/aws-multi-region-resume/
+
+# Card + header images
 header:
   image: /assets/images/secure-resume-arch.png
   image_description: "Architecture diagram"
@@ -13,17 +16,23 @@ teaser: /assets/images/secure-resume-arch.png
 
 This project delivers a **static resume site** with **secure access control**, **multi-region failover**, and **automated deployments** from GitHub.
 
+---
+
 ## Goals
 - Host a static site securely without making S3 buckets public.
 - Deliver globally with low latency using CloudFront.
 - Set up failover between two AWS regions.
 - Automate deployments from GitHub.
 
+---
+
 ## How it’s built
+
 **S3 Buckets**  
 - Two **private** buckets:
   - `ayda-resume-us-east-1` (primary)
   - `ayda-resume-eu-west-1` (secondary)
+- Store `index.html`, `style.css`, and a PDF resume.
 
 **CloudFront**  
 - **Origin Access Control (OAC)** keeps S3 private.
@@ -37,10 +46,14 @@ This project delivers a **static resume site** with **secure access control**, *
 **CI/CD**  
 - GitHub Actions:
   1. Syncs files to both S3 buckets.
-  2. Invalidates CloudFront to push updates live.
+  2. Invalidates CloudFront so updates go live immediately.
+
+---
 
 ## Architecture
 ![Architecture Diagram]({{ '/assets/images/secure-resume-arch.png' | relative_url }})
+
+---
 
 ## Links
 - **Repo:** <https://github.com/ayda-hdp/secure-resume-delivery>  
