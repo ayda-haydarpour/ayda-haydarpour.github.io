@@ -24,6 +24,19 @@ teaser: /assets/images/diagram.png
 
 > A static resume site with **secure access control**, **multi-region failover**, and **automated deployments** from GitHub.
 
+<div class="panel">
+  <strong>Quick facts</strong>
+  <ul>
+    <li><strong>Stack:</strong> CloudFront (OAC, origin groups), S3 (private), IAM, Route 53, GitHub Actions</li>
+    <li><strong>Focus:</strong> Private-by-default hosting, global delivery, regional failover</li>
+    <li><strong>Outcome:</strong> Secure, resilient static site with fast CI/CD</li>
+  </ul>
+  <p>
+    <a class="btn btn--primary" href="https://github.com/ayda-hdp/secure-resume-delivery" target="_blank" rel="noopener">View Repo</a>
+    <a class="btn btn--outline" href="https://<your-cloudfront-domain>" target="_blank" rel="noopener">Live Demo</a>
+  </p>
+</div>
+
 ---
 
 ## Goals
@@ -79,5 +92,3 @@ teaser: /assets/images/diagram.png
 
 ## Demo
 {% include video id="60pCkb77k8s" provider="youtube" %}
-
-
