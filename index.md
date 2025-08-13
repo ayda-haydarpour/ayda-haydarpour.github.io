@@ -93,14 +93,14 @@ classes: home-landing
       </div>
     </li>
     <li>
-      <span class="media-icon"><img src="{{ '/assets/icons/nbc.png' | relative_url }}" alt=""></span>
+      <span class="media-icon"><img src="{{ '/assets/icons/nbc.svg' | relative_url }}" alt=""></span>
       <div class="media-text">
         <strong>NBC News</strong>
         <a href="https://www.nbcnews.com/news/world/afghan-female-robotics-team-defiant-after-fleeing-taliban-qatar-n1277464" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
     <li>
-      <span class="media-icon"><img src="{{ '/assets/icons/vt.png' | relative_url }}" alt=""></span>
+      <span class="media-icon"><img src="{{ '/assets/icons/vt.svg' | relative_url }}" alt=""></span>
       <div class="media-text">
         <strong>Virginia Tech News</strong>
         <a href="https://news.vt.edu/articles/2022/09/ayda-haydarpour.html" target="_blank" rel="noopener">Read</a>
