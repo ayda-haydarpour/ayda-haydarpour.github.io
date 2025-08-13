@@ -1,8 +1,7 @@
 title: "Ayda Haydarpour"
 description: "Cloud & Security • AWS • Systems"
 url: "https://ayda-hdp.github.io"
-baseurl: "/aydahaydarpour.github.io"
-
+baseurl: "/aydahaydarpour.github.io"   # project site = repo name, leading slash
 
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 minimal_mistakes_skin: "default"
@@ -15,7 +14,7 @@ plugins:
 include:
   - _pages
 
-# Header navigation — include baseurl for project sites
+# Header navigation — include baseurl for a project site
 nav:
   - title: "Home"
     url: /aydahaydarpour.github.io/
@@ -57,6 +56,10 @@ author:
     - "**Security & Networking:** IAM policies & access control, network security, VPNs & firewalls, data encryption & hashing, monitoring & logging, Security+ best practices"
     - "**Programming & Scripting:** Python, Java, C, Bash, JavaScript, HTML/CSS, SQL"
     - "**Tools & Platforms:** Linux, Git & GitHub, Wireshark, system monitoring tools"
+
+# Optional previews (using your existing image for now)
+og_image: /assets/images/diagram.png   # fine for social previews today
+logo: /assets/images/favicon.svg       # SVG favicon (file below)
 
 atom_feed:
   hide: true
