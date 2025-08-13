@@ -2,9 +2,9 @@
 layout: single
 title: "Ayda Haydarpour"
 excerpt: "Cloud & Security • AWS • Systems"
-author_profile: false   # <-- hide left sidebar on HOME only
-sidebar: []             # <-- no sidebar content on HOME
-classes: home-landing   # <-- hook for special hero styling
+author_profile: false
+sidebar: []
+classes: home-landing
 ---
 
 <!-- Hero -->
@@ -12,21 +12,53 @@ classes: home-landing   # <-- hook for special hero styling
   <div class="hero-inner">
     <h1 class="hero-title">Ayda Haydarpour</h1>
     <p class="hero-subtitle">
-      I specialize in <strong>cloud architecture</strong>, <strong>cybersecurity</strong>, and
-      <strong>end-to-end systems</strong> — with a focus on AWS and secure delivery.
+      Cloud &amp; Security-Focused Computer Science Student
+    </p>
+    <p class="hero-intro">
+      I’m a senior specializing in <strong>cloud architecture</strong>, <strong>cybersecurity</strong>, and
+      <strong>systems development</strong>. I design reliable, scalable solutions with a focus on AWS and security best practices.
     </p>
     <div class="hero-cta">
-      <a class="btn btn--primary" href="{{ '/portfolio/' | relative_url }}">View Projects</a>
-      <a class="btn btn--outline" href="{{ '/media/' | relative_url }}">Media</a>
-      <a class="btn btn--outline" href="mailto:aydahaydarpour@gmail.com">Contact</a>
+      <a class="btn btn--primary" href="{{ '/resume.pdf' | relative_url }}" download>Download Resume</a>
+      <a class="btn btn--outline" href="mailto:aydahaydarpour@gmail.com">Email Me</a>
     </div>
   </div>
 </section>
 
-<!-- Projects Preview -->
+<!-- Skills (card, exactly like your screenshot) -->
+<section class="section panel section-tight">
+  <h2>Skills</h2>
+  <div class="skills-card">
+    <div class="skills-col">
+      <h3>Cloud Services</h3>
+      <ul>
+        <li>AWS: EC2, S3, RDS, VPC, Route 53, CloudFront, IAM, CloudWatch, Auto Scaling, Load Balancing</li>
+      </ul>
+
+      <h3>Programming &amp; Scripting</h3>
+      <ul>
+        <li>Python, Java, C, Bash, JavaScript, HTML/CSS, SQL</li>
+      </ul>
+    </div>
+
+    <div class="skills-col">
+      <h3>Security &amp; Networking</h3>
+      <ul>
+        <li>IAM policies &amp; access control, Network security, VPNs &amp; Firewalls, Data encryption &amp; hashing, Monitoring &amp; logging, Security best practices (CompTIA+)</li>
+      </ul>
+
+      <h3>Tools &amp; Platforms</h3>
+      <ul>
+        <li>Linux, Git &amp; GitHub, Wireshark, System monitoring tools</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Projects (unchanged logic) -->
 <section class="section panel section-tight">
   <div class="section-header">
-    <h2>Featured Projects</h2>
+    <h2>Projects</h2>
     <a class="section-link" href="{{ '/portfolio/' | relative_url }}">See all →</a>
   </div>
 
@@ -58,24 +90,7 @@ classes: home-landing   # <-- hook for special hero styling
   </div>
 </section>
 
-<!-- Skills Preview -->
-<section class="section panel section-tight">
-  <div class="section-header">
-    <h2>Skills</h2>
-  </div>
-  <ul class="pill-list">
-    <li>AWS (CloudFront, S3, Route 53, IAM)</li>
-    <li>Security (IAM, WAF, Encryption)</li>
-    <li>Python</li>
-    <li>Java</li>
-    <li>Bash</li>
-    <li>Git/GitHub</li>
-    <li>Linux</li>
-    <li>SQL</li>
-  </ul>
-</section>
-
-<!-- Media Preview -->
+<!-- Media (unchanged) -->
 <section class="section panel section-tight">
   <div class="section-header">
     <h2>Media & Recognition</h2>
@@ -86,14 +101,4 @@ classes: home-landing   # <-- hook for special hero styling
     <li><strong>NBC News</strong> — <a href="https://www.nbcnews.com/news/world/afghan-female-robotics-team-defiant-after-fleeing-taliban-qatar-n1277464" target="_blank" rel="noopener">Read</a></li>
     <li><strong>Virginia Tech News</strong> — <a href="https://news.vt.edu/articles/2022/09/ayda-haydarpour.html" target="_blank" rel="noopener">Read</a></li>
   </ul>
-</section>
-
-<!-- Contact CTA -->
-<section class="section panel section-tight" style="text-align:center;">
-  <h2>Get in touch</h2>
-  <p>Open to internships and cloud/security projects.</p>
-  <p>
-    <a class="btn btn--primary" href="mailto:aydahaydarpour@gmail.com">Email Me</a>
-    <a class="btn btn--outline" href="https://github.com/ayda-hdp" target="_blank" rel="noopener">GitHub</a>
-  </p>
 </section>
