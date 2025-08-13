@@ -6,7 +6,7 @@ classes: wide
 
 # Featured cards at the top
 feature_row:
-  - image_path: /assets/images/secure-resume-arch.png
+  - image_path: /assets/images/diagram.png
     alt: "AWS Multi-Region Resume architecture"
     title: "AWS Multi-Region Resume Site"
     excerpt: "Secure, globally distributed static site with failover, access control, and CI/CD."
