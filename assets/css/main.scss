@@ -1,0 +1,10 @@
+---
+# Process this file as SCSS
+---
+
+@import "minimal-mistakes/skins/default";
+@import "minimal-mistakes";
+
+/* Your custom theme overrides */
+@import "custom/variables";
+@import "custom/custom";
