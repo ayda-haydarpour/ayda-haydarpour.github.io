@@ -61,7 +61,7 @@ author:
 
 # Optional previews (using your existing image for now)
 og_image: /assets/images/diagram.png   # fine for social previews today
-logo: /assets/images/favicon.svg       # SVG favicon (file below)
+logo: 
 
 atom_feed:
   hide: true
