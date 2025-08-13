@@ -16,20 +16,24 @@ sidebar:
     text: |
       - **Email:** [aydahaydarpour@gmail.com](mailto:aydahaydarpour@gmail.com)
       - **GitHub:** [ayda-hdp](https://github.com/ayda-hdp)
-
-# Featured card (left sidebar stays visible)
-feature_row:
-  - image_path: /assets/images/secure-resume-arch.png
-    alt: "AWS Multi-Region Resume architecture"
-    title: "AWS Multi-Region Resume Site"
-    excerpt: "Secure, globally distributed static site with failover, access control, and CI/CD."
-    # Use the SAME path as the project's permalink above (project site needs baseurl at runtime)
-    url: "/portfolio/aws-multi-region-resume/"
-    btn_label: "View"
-    btn_class: "btn--primary"
 ---
 
-{% include feature_row %}
+<div class="notice--primary" style="margin-bottom:1.25rem;"><strong>Featured Project</strong></div>
+
+<div class="feature__wrapper">
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-teaser">
+        <img src="{{ '/assets/images/secure-resume-arch.png' | relative_url }}" alt="AWS Multi-Region Resume architecture">
+      </div>
+      <h2 class="archive__item-title">AWS Multi-Region Resume Site</h2>
+      <p class="archive__item-excerpt">Secure, globally distributed static site with failover, access control, and CI/CD.</p>
+      <p>
+        <a class="btn btn--primary" href="{{ '/portfolio/aws-multi-region-resume/' | relative_url }}">View</a>
+      </p>
+    </div>
+  </div>
+</div>
 
 ## All Projects
 
