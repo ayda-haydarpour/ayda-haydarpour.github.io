@@ -40,4 +40,9 @@ defaults:
 author:
   name: "Ayda Haydarpour"
   avatar:
-  bio: "Computer Science senior specializing in cloud architecture, cybersecurity, and systems development."
+  bio: "Computer Science senior specializing in cloud architecture, cybersecurity, and systems development. Experienced in AWS, security best practices, and building end-to-end technical solutions that blend reliability, scalability, and real-world impact."
+  skills:
+    - "**Cloud Services:** AWS (EC2, S3, RDS, VPC, Route 53, CloudFront, IAM, CloudWatch, Auto Scaling, Load Balancing)"
+    - "**Security & Networking:** IAM policies & access control, network security, VPNs & firewalls, data encryption & hashing, monitoring & logging, Security+ best practices"
+    - "**Programming & Scripting:** Python, Java, C, Bash, JavaScript, HTML/CSS, SQL"
+    - "**Tools & Platforms:** Linux, Git & GitHub, Wireshark, system monitoring tools"
