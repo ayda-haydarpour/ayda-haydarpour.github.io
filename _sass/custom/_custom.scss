@@ -77,13 +77,13 @@
 
 
 /* =========================
-   HERO SECTION
+   HERO SECTION (no buttons)
    ========================= */
 .home-landing .hero-landing {
   background: linear-gradient(135deg,#5aa9f4,#39d2c0);
   color: #fff;
   border-radius: 18px;
-  padding: 52px 32px 40px; /* larger since buttons are removed */
+  padding: 52px 32px 40px;
   margin-bottom: 32px;
 }
 .hero-inner { text-align: center; }
@@ -133,7 +133,7 @@
 
 
 /* =========================
-   MEDIA & RECOGNITION
+   MEDIA & RECOGNITION (icons)
    ========================= */
 .media-list {
   list-style: none;
@@ -149,6 +149,7 @@
   border: 1px solid #ececec;
   border-radius: 12px;
   background: #fff;
+  position: relative; /* for fade overlay when collapsed */
 }
 .media-icon {
   width: 40px; height: 40px;
@@ -168,16 +169,24 @@
 
 
 /* =========================
-   COLLAPSIBLE “SEE ALL” UI
+   COLLAPSIBLE “SEE ALL” UI — SASS-SAFE
    ========================= */
-.is-collapsed {
-  position: relative;
-  --collapsed-count: 4; /* default, overridden by data-collapse */
-}
-.is-collapsed > * { display: none; }
-.is-collapsed[data-collapse] > *:nth-child(-n+var(--collapsed-count)) { display: initial; }
 
-/* soft fade overlay when collapsed */
+/* collapsed state: hide all children by default */
+.is-collapsed > * { display: none; }
+
+/* show first N items based on class added by JS */
+.is-collapsed.show-1  > *:nth-child(-n+1)  { display: initial; }
+.is-collapsed.show-2  > *:nth-child(-n+2)  { display: initial; }
+.is-collapsed.show-3  > *:nth-child(-n+3)  { display: initial; }
+.is-collapsed.show-4  > *:nth-child(-n+4)  { display: initial; }
+.is-collapsed.show-5  > *:nth-child(-n+5)  { display: initial; }
+.is-collapsed.show-6  > *:nth-child(-n+6)  { display: initial; }
+.is-collapsed.show-8  > *:nth-child(-n+8)  { display: initial; }
+.is-collapsed.show-9  > *:nth-child(-n+9)  { display: initial; }
+.is-collapsed.show-10 > *:nth-child(-n+10) { display: initial; }
+
+/* soft fade when collapsed */
 .is-collapsed::after {
   content: "";
   position: absolute; left: 0; right: 0; bottom: 0; height: 58px;
@@ -186,11 +195,11 @@
   pointer-events: none;
 }
 
-/* expanded state */
+/* expanded state: show all and remove fade */
 .is-expanded > * { display: initial; }
 .is-expanded::after { display: none; }
 
-/* Link-styled toggle button */
+/* Link-styled toggle */
 .section-link.as-link {
   background: none; border: 0; padding: 0;
   font: inherit; color: #0f766e; cursor: pointer; text-decoration: underline;
