@@ -114,21 +114,26 @@ classes: home-landing
       </div>
     </li>
 
-    <!-- add the rest of your media items here; the expander will reveal them -->
+    <!-- Add more media entries here; the expander will reveal the extras -->
   </ul>
 </section>
 
-<!-- Inline JS for “See all” toggles -->
+<!-- SASS-SAFE toggler JS -->
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.is-collapsed[data-collapse]').forEach(box => {
+    const n = parseInt(box.dataset.collapse || '4', 10);
+    box.classList.add(`show-${n}`);
+  });
+});
+
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-toggle]');
   if (!btn) return;
+
   const sel = btn.getAttribute('data-toggle');
   const box = document.querySelector(sel);
   if (!box) return;
-
-  const collapsedCount = parseInt(box.dataset.collapse || '4', 10);
-  box.style.setProperty('--collapsed-count', collapsedCount);
 
   const expanded = box.classList.toggle('is-expanded');
   box.classList.toggle('is-collapsed', !expanded);
