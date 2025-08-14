@@ -3,15 +3,13 @@
    ========================= */
 
 /* Make the overall site container wider */
-.wrap {
-  max-width: 1600px; /* bump to 1700px if you want even wider */
-}
+.wrap { max-width: 1600px; }
 
 /* Keep text-heavy areas centered and readable by default */
 .page__content,
 .hero-inner,
 .skills-card,
-.entries-grid--compact,
+.entries-grid--wide,
 .media-list {
   max-width: 1200px;
   margin-left: auto;
@@ -21,34 +19,15 @@
 /* On the homepage, allow key sections to use more width */
 .home-landing .hero-inner,
 .home-landing .skills-card,
-.home-landing .entries-grid--compact,
-.home-landing .media-list {
-  max-width: 1400px; /* try 1480–1560 for even wider */
-}
+.home-landing .entries-grid--wide,
+.home-landing .media-list { max-width: 1400px; }
 
-/* On very large screens, go wider and show 4-across projects */
+/* On very large screens, nudge wider */
 @media (min-width: 1300px) {
   .home-landing .hero-inner,
   .home-landing .skills-card,
-  .home-landing .entries-grid--compact,
-  .home-landing .media-list {
-    max-width: 1480px;
-  }
-  .home-landing .entries-grid--compact {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-  }
-  .home-landing .teaser--compact img { height: 190px; }
-}
-
-/* Keep things fluid on tablets/phones */
-@media (max-width: 980px) {
-  .home-landing .hero-inner,
-  .home-landing .skills-card,
-  .home-landing .entries-grid--compact,
-  .home-landing .media-list {
-    max-width: 100%;
-  }
+  .home-landing .entries-grid--wide,
+  .home-landing .media-list { max-width: 1480px; }
 }
 
 /* Smooth scroll for nav anchors */
@@ -114,44 +93,91 @@ html { scroll-behavior: smooth; }
 
 
 /* =========================
-   PROJECTS — COMPACT CARDS
+   PROJECTS — WIDE 3-CARD LAYOUT
    ========================= */
-.entries-grid--compact {
+.entries-grid--wide {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* becomes 4 at >=1300px */
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
-.card--compact {
-  border: 1px solid #ececec;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 6px 12px rgba(0,0,0,.04);
-  display: flex; flex-direction: column;
-}
-.card--compact .card__body { padding: .85rem; }
-.teaser--compact { display: block; width: 100%; overflow: hidden; background: #f7f7f7; }
-.teaser--compact img { width: 100%; height: 160px; object-fit: cover; display: block; }
-.btn.btn--sm { padding: .4rem .6rem; font-size: .85rem; align-self: flex-start; }
 
+.card--wide {
+  border: 1px solid #ececec;
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.teaser--wide {
+  display: block;
+  width: 100%;
+  height: 220px;            /* taller, more visual */
+  background: #f7f7f7;
+  overflow: hidden;
+}
+.teaser--wide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card--wide .card__body { padding: 1rem; }
+.card--wide .archive__item-title { margin: 0 0 .35rem; font-size: 1.1rem; }
+.card--wide .archive__item-excerpt { margin: 0 0 .65rem; color: #4b5563; }
+.card--wide .btn { align-self: flex-start; }
+
+/* Placeholder visual */
+.teaser--placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    #f3f4f6,
+    #f3f4f6 10px,
+    #eef2f7 10px,
+    #eef2f7 20px
+  );
+  position: relative;
+}
+.badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: #111827;
+  color: #fff;
+  font-size: .8rem;
+  padding: .25rem .5rem;
+  border-radius: 999px;
+}
 
 /* =========================
    MEDIA & RECOGNITION
    ========================= */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-link.as-link {
+  background: none; border: 0; padding: 0;
+  font: inherit; color: #0f766e; cursor: pointer; text-decoration: underline;
+}
+.section-link.as-link:hover { color: #0b4e48; }
+
 .media-list {
   list-style: none; margin: 0; padding: 0;
   display: grid; gap: 12px;
 }
 .media-list li {
   display: grid;
-  grid-template-columns: 40px 1fr;  /* first 4 items have icons */
+  grid-template-columns: 40px 1fr;  /* rows that include an icon */
   align-items: center;
   gap: 12px;
   padding: 10px 12px;
   border: 1px solid #ececec;
   border-radius: 12px;
   background: #fff;
-  position: relative; /* for fade overlay when collapsed */
 }
 .media-icon {
   width: 40px; height: 40px;
@@ -169,59 +195,14 @@ html { scroll-behavior: smooth; }
 .media-text { display: flex; align-items: center; gap: .6rem; }
 .media-text a { white-space: nowrap; }
 
-/* Text-only rows (no icon) span full width */
+/* Text-only rows (no icon) — not used on homepage now but kept for consistency */
 .media-list li.no-icon {
   grid-template-columns: 1fr;
   padding-left: 14px;
 }
-.media-list li.no-icon .media-text {
-  margin-left: 0;
-}
+.media-list li.no-icon .media-text { margin-left: 0; }
 .media-list li.no-icon { opacity: .96; }
 .media-list li.no-icon:hover { opacity: 1; }
-
-
-/* =========================
-   COLLAPSIBLE “SEE ALL” UI — SASS-SAFE
-   ========================= */
-
-/* collapsed state: hide all children by default */
-.is-collapsed > * { display: none; }
-
-/* show first N items based on class added by JS */
-.is-collapsed.show-1  > *:nth-child(-n+1)  { display: initial; }
-.is-collapsed.show-2  > *:nth-child(-n+2)  { display: initial; }
-.is-collapsed.show-3  > *:nth-child(-n+3)  { display: initial; }
-.is-collapsed.show-4  > *:nth-child(-n+4)  { display: initial; }
-.is-collapsed.show-5  > *:nth-child(-n+5)  { display: initial; }
-.is-collapsed.show-6  > *:nth-child(-n+6)  { display: initial; }
-.is-collapsed.show-8  > *:nth-child(-n+8)  { display: initial; }
-.is-collapsed.show-9  > *:nth-child(-n+9)  { display: initial; }
-.is-collapsed.show-10 > *:nth-child(-n+10) { display: initial; }
-
-/* soft fade when collapsed */
-.is-collapsed::after {
-  content: "";
-  position: absolute; left: 0; right: 0; bottom: 0; height: 58px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
-  border-bottom-left-radius: inherit; border-bottom-right-radius: inherit;
-  pointer-events: none;
-}
-
-/* expanded state: show all and remove fade */
-.is-expanded > * { display: initial; }
-.is-expanded::after { display: none; }
-
-/* Link-styled toggle */
-.section-link.as-link {
-  background: none; border: 0; padding: 0;
-  font: inherit; color: #0f766e; cursor: pointer; text-decoration: underline;
-}
-.section-link.as-link:hover { color: #0b4e48; }
-
-/* rounded corners on containers so the fade looks clean */
-#projects-grid, #media-list { border-radius: 14px; }
-
 
 /* =========================
    RESPONSIVE TWEAKS
@@ -230,8 +211,11 @@ html { scroll-behavior: smooth; }
   .hero-title { font-size: 36px; }
   .hero-intro { font-size: 16px; }
 }
+@media (max-width: 900px) {
+  .entries-grid--wide { grid-template-columns: 1fr; }
+  .teaser--wide { height: 200px; }
+}
 @media (max-width: 760px) {
   .skills-card { grid-template-columns: 1fr; gap: 18px; }
-  .entries-grid--compact { grid-template-columns: 1fr; }
-  .teaser--compact img { height: 180px; }
+  .teaser--wide { height: 180px; }
 }
