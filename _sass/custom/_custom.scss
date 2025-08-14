@@ -389,3 +389,15 @@ html { scroll-behavior: smooth; }
   display: none; 
 }
 
+/* Hide theme's default footer copyright; keep only my custom line */
+.page__footer .page__footer-copyright:not(.custom) {
+  display: none;
+}
+
+/* Style my custom footer line */
+.page__footer .page__footer-copyright.custom {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+  padding: 12px 0; /* optional: adds a little breathing room */
+}
