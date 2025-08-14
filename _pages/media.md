@@ -7,10 +7,7 @@ sidebar: []
 classes: media-page
 ---
 
-<!-- HERO / TITLE -->
-<section class="section-header page-header-tight">
-  <h1>Media & Recognition</h1>
-</section>
+
 
 <!-- =============== Major Features =============== -->
 <section class="media-section panel">
