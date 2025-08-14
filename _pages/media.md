@@ -7,10 +7,25 @@ sidebar: []
 classes: media-page
 ---
 
+<!-- Compact gradient header -->
+<header class="media-hero">
+  <div class="media-hero__inner">
+    <h1>Media & Recognition</h1>
+    <p>Selected press, features, and profiles.</p>
+  </div>
+</header>
 
+<!-- Quick jump -->
+<nav class="subnav-pills">
+  <a href="#major">Major Features</a>
+  <a href="#vtnews">Virginia Tech News</a>
+  <a href="#broadcast">Broadcast & Public Radio</a>
+  <a href="#intl">International Media</a>
+  <a href="#profiles">Profiles</a>
+</nav>
 
 <!-- =============== Major Features =============== -->
-<section class="media-section panel">
+<section id="major" class="media-section panel">
   <h2>Major Features</h2>
   <ul class="media-list media-grid">
     <li class="media-card">
@@ -38,7 +53,7 @@ classes: media-page
 </section>
 
 <!-- =============== Virginia Tech News =============== -->
-<section class="media-section panel">
+<section id="vtnews" class="media-section panel">
   <h2>Virginia Tech News</h2>
   <ul class="media-list media-grid">
     <li class="media-card">
@@ -58,7 +73,7 @@ classes: media-page
 </section>
 
 <!-- =============== Broadcast & Public Radio =============== -->
-<section class="media-section panel">
+<section id="broadcast" class="media-section panel">
   <h2>Broadcast & Public Radio</h2>
   <ul class="media-list media-grid">
     <li class="media-card no-icon">
@@ -77,68 +92,23 @@ classes: media-page
 </section>
 
 <!-- =============== International Media =============== -->
-<section class="media-section panel">
+<section id="intl" class="media-section panel">
   <h2>International Media</h2>
   <ul class="media-list media-grid">
-    <li class="media-card no-icon">
-      <div class="media-text">
-        <strong>France 24</strong>
-        <a class="btn btn--read" href="https://first.global/in-the-news/france-24-afghan-girls-robotics-team-design-their-future-in-qatar/" target="_blank" rel="noopener">Read</a>
-      </div>
-    </li>
-    <li class="media-card no-icon">
-      <div class="media-text">
-        <strong>Macaroni Kid NRV</strong>
-        <a class="btn btn--read" href="https://nrv.macaronikid.com/articles/6411e7794a01232a11181e2e/ymca-at-virginia-tech-celebrates-women-in-innovation-and-technology" target="_blank" rel="noopener">Read</a>
-      </div>
-    </li>
-    <li class="media-card no-icon">
-      <div class="media-text">
-        <strong>RFI</strong>
-        <a class="btn btn--read" href="https://www.rfi.fr/en/business-and-tech/20210922-afghan-girls-robotics-team-design-their-future-in-qatar" target="_blank" rel="noopener">Read</a>
-      </div>
-    </li>
-    <li class="media-card no-icon">
-      <div class="media-text">
-        <strong>Nippon.com</strong>
-        <a class="btn btn--read" href="https://www.nippon.com/en/news/reu20210827KBN2FR1JN/" target="_blank" rel="noopener">Read</a>
-      </div>
-    </li>
-    <li class="media-card no-icon">
-      <div class="media-text">
-        <strong>Reuters</strong>
-        <a class="btn btn--read" href="https://www.reuters.com/world/asia-pacific/dont-abandon-afghanistan-pleads-member-afghan-all-female-robotics-team-2021-08-26/" target="_blank" rel="noopener">Read</a>
-      </div>
-    </li>
-    <li class="media-card no-icon">
-      <div class="media-text">
-        <strong>Al-Fanar Media</strong>
-        <a class="btn btn--read" href="https://www.al-fanarmedia.org/2021/09/afghanistans-all-female-robotics-team-continues-building-robots-in-qatar/" target="_blank" rel="noopener">Read</a>
-      </div>
-    </li>
-    <li class="media-card no-icon">
-      <div class="media-text">
-        <strong>Qatar Foundation</strong>
-        <a class="btn btn--read" href="https://www.qf.org.qa/stories/qatar-has-been-the-gateway-to-a-better-life-for-us-says-captain-of-afghan" target="_blank" rel="noopener">Read</a>
-      </div>
-    </li>
-    <li class="media-card no-icon">
-      <div class="media-text">
-        <strong>Qatar Day</strong>
-        <a class="btn btn--read" href="https://www.qatarday.com/dont-abandon-afghanistan-pleads-member-of-afghan-all-female-robotics-team" target="_blank" rel="noopener">Read</a>
-      </div>
-    </li>
-    <li class="media-card no-icon">
-      <div class="media-text">
-        <strong>Kuwait Times</strong>
-        <a class="btn btn--read" href="https://kuwaittimes.com/afghan-robotics-team-design-future-in-qatar/" target="_blank" rel="noopener">Read</a>
-      </div>
-    </li>
+    <li class="media-card no-icon"><div class="media-text"><strong>France 24</strong><a class="btn btn--read" href="https://first.global/in-the-news/france-24-afghan-girls-robotics-team-design-their-future-in-qatar/" target="_blank" rel="noopener">Read</a></div></li>
+    <li class="media-card no-icon"><div class="media-text"><strong>Macaroni Kid NRV</strong><a class="btn btn--read" href="https://nrv.macaronikid.com/articles/6411e7794a01232a11181e2e/ymca-at-virginia-tech-celebrates-women-in-innovation-and-technology" target="_blank" rel="noopener">Read</a></div></li>
+    <li class="media-card no-icon"><div class="media-text"><strong>RFI</strong><a class="btn btn--read" href="https://www.rfi.fr/en/business-and-tech/20210922-afghan-girls-robotics-team-design-their-future-in-qatar" target="_blank" rel="noopener">Read</a></div></li>
+    <li class="media-card no-icon"><div class="media-text"><strong>Nippon.com</strong><a class="btn btn--read" href="https://www.nippon.com/en/news/reu20210827KBN2FR1JN/" target="_blank" rel="noopener">Read</a></div></li>
+    <li class="media-card no-icon"><div class="media-text"><strong>Reuters</strong><a class="btn btn--read" href="https://www.reuters.com/world/asia-pacific/dont-abandon-afghanistan-pleads-member-afghan-all-female-robotics-team-2021-08-26/" target="_blank" rel="noopener">Read</a></div></li>
+    <li class="media-card no-icon"><div class="media-text"><strong>Al-Fanar Media</strong><a class="btn btn--read" href="https://www.al-fanarmedia.org/2021/09/afghanistans-all-female-robotics-team-continues-building-robots-in-qatar/" target="_blank" rel="noopener">Read</a></div></li>
+    <li class="media-card no-icon"><div class="media-text"><strong>Qatar Foundation</strong><a class="btn btn--read" href="https://www.qf.org.qa/stories/qatar-has-been-the-gateway-to-a-better-life-for-us-says-captain-of-afghan" target="_blank" rel="noopener">Read</a></div></li>
+    <li class="media-card no-icon"><div class="media-text"><strong>Qatar Day</strong><a class="btn btn--read" href="https://www.qatarday.com/dont-abandon-afghanistan-pleads-member-of-afghan-all-female-robotics-team" target="_blank" rel="noopener">Read</a></div></li>
+    <li class="media-card no-icon"><div class="media-text"><strong>Kuwait Times</strong><a class="btn btn--read" href="https://kuwaittimes.com/afghan-robotics-team-design-future-in-qatar/" target="_blank" rel="noopener">Read</a></div></li>
   </ul>
 </section>
 
 <!-- =============== Profiles & Biographies =============== -->
-<section class="media-section panel">
+<section id="profiles" class="media-section panel">
   <h2>Profiles & Biographies</h2>
   <ul class="media-list media-grid">
     <li class="media-card no-icon">
