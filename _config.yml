@@ -19,9 +19,9 @@ nav:
   - title: "Home"
     url: /aydahaydarpour.github.io/
   - title: "Projects"
-    url: /aydahaydarpour.github.io/portfolio/
+    url: /aydahaydarpour.github.io/#projects
   - title: "Media"
-    url: /aydahaydarpour.github.io/media/
+    url: /aydahaydarpour.github.io/#media
   - title: "Contact"
     url: mailto:aydahaydarpour@gmail.com
 
