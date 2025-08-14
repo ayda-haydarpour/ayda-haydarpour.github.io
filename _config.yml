@@ -15,7 +15,7 @@ include:
   - _pages
 
 # Header navigation — include baseurl for a project site
-  nav:
+nav:
   - title: "Home"
     url: /aydahaydarpour.github.io/
   - title: "Projects"
@@ -61,7 +61,7 @@ author:
 
 # Optional previews (using your existing image for now)
 og_image: /assets/images/diagram.png   # fine for social previews today
-logo: 
+logo:
 
 atom_feed:
   hide: true
