@@ -23,7 +23,7 @@
 .home-landing .skills-card,
 .home-landing .entries-grid--compact,
 .home-landing .media-list {
-  max-width: 1400px; /* try 1480–1560 if you want even wider */
+  max-width: 1400px; /* try 1480–1560 for even wider */
 }
 
 /* On very large screens, go wider and show 4-across projects */
@@ -50,6 +50,9 @@
     max-width: 100%;
   }
 }
+
+/* Smooth scroll for nav anchors */
+html { scroll-behavior: smooth; }
 
 /* Hide duplicate page title on homepage */
 .home-landing .page__title { display: none; }
@@ -133,16 +136,15 @@
 
 
 /* =========================
-   MEDIA & RECOGNITION (icons)
+   MEDIA & RECOGNITION
    ========================= */
 .media-list {
-  list-style: none;
-  margin: 0; padding: 0;
+  list-style: none; margin: 0; padding: 0;
   display: grid; gap: 12px;
 }
 .media-list li {
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: 40px 1fr;  /* first 4 items have icons */
   align-items: center;
   gap: 12px;
   padding: 10px 12px;
@@ -166,6 +168,17 @@
 }
 .media-text { display: flex; align-items: center; gap: .6rem; }
 .media-text a { white-space: nowrap; }
+
+/* Text-only rows (no icon) span full width */
+.media-list li.no-icon {
+  grid-template-columns: 1fr;
+  padding-left: 14px;
+}
+.media-list li.no-icon .media-text {
+  margin-left: 0;
+}
+.media-list li.no-icon { opacity: .96; }
+.media-list li.no-icon:hover { opacity: 1; }
 
 
 /* =========================
