@@ -112,7 +112,7 @@ classes: home-landing
     </li>
     <li>
       <span class="media-icon"><img src="{{ '/assets/icons/nbc.svg' | relative_url }}" alt="NBC News" width="28" height="28" loading="lazy"></span>
-      <div class="media-text"><strong>NBC News — Afghan Female Robotics Team Defiant After Fleeing Taliban</strong>
+      <div class="media-text"><strong>NBC News — Leading Afghan Girls’ Robotics Team</strong>
         <a href="https://www.nbcnews.com/news/world/afghan-female-robotics-team-defiant-after-fleeing-taliban-qatar-n1277464" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
