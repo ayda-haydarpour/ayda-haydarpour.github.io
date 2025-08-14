@@ -77,44 +77,109 @@ classes: home-landing
   </div>
 </section>
 
-<!-- MEDIA (collapsible + Forbes added) -->
+<!-- MEDIA (first 4 with icons; rest text-only; collapsible) -->
 <section class="section panel section-tight" id="media">
   <div class="section-header">
     <h2>Media & Recognition</h2>
     <button class="section-link as-link" data-toggle="#media-list">See all →</button>
   </div>
 
-  <ul id="media-list" class="media-list is-collapsed" data-collapse="4">
+  <ul id="media-list" class="media-list is-collapsed show-4" data-collapse="4">
+    <!-- 1) WITH ICON -->
     <li>
       <span class="media-icon"><img src="{{ '/assets/icons/vogue.svg' | relative_url }}" alt="Teen Vogue" width="28" height="28" loading="lazy"></span>
-      <div class="media-text">
-        <strong>Teen Vogue — 21 Under 21 (2021)</strong>
+      <div class="media-text"><strong>Teen Vogue — 21 Under 21 (2021)</strong>
         <a href="https://www.teenvogue.com/gallery/teen-vogues-21-under-21-2021" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
+    <!-- 2) WITH ICON -->
     <li>
       <span class="media-icon"><img src="{{ '/assets/icons/nbc.svg' | relative_url }}" alt="NBC News" width="28" height="28" loading="lazy"></span>
-      <div class="media-text">
-        <strong>NBC News</strong>
+      <div class="media-text"><strong>NBC News — Afghan Female Robotics Team Defiant After Fleeing Taliban</strong>
         <a href="https://www.nbcnews.com/news/world/afghan-female-robotics-team-defiant-after-fleeing-taliban-qatar-n1277464" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
+    <!-- 3) WITH ICON -->
     <li>
       <span class="media-icon"><img src="{{ '/assets/icons/forbes.svg' | relative_url }}" alt="Forbes" width="28" height="28" loading="lazy"></span>
-      <div class="media-text">
-        <strong>Forbes — Afghan Girls Robotics Team Profile</strong>
+      <div class="media-text"><strong>Forbes — Afghan Girls Robotics Team Profile</strong>
         <a href="https://www.forbes.com/profile/afghan-girls-robotic-team/" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
+    <!-- 4) WITH ICON -->
     <li>
       <span class="media-icon"><img src="{{ '/assets/icons/vt.svg' | relative_url }}" alt="Virginia Tech News" width="28" height="28" loading="lazy"></span>
-      <div class="media-text">
-        <strong>Virginia Tech News</strong>
+      <div class="media-text"><strong>Virginia Tech News — Student Spotlight (2022)</strong>
         <a href="https://news.vt.edu/articles/2022/09/ayda-haydarpour.html" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
 
-    <!-- Add more media entries here; the expander will reveal the extras -->
+    <!-- 5+) NO ICON (add class="no-icon" and omit icon span) -->
+    <li class="no-icon">
+      <div class="media-text"><strong>Virginia Tech News — Afghan Dreamers / Rule Breakers (2025)</strong>
+        <a href="https://news.vt.edu/articles/2025/04/Afghan-Dreamers-Rule-Breakers-Ayda-Haydarpour-student.html" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>Virginia Public Radio</strong>
+        <a href="https://virginiapublicradio.com/2022/09/01/robotics-champion-fled-afghanistan-now-shes-studying-at-virginia-tech/" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>WVTF Public Radio</strong>
+        <a href="https://www.wvtf.org/news/2022-09-01/robotics-champion-fled-afghanistan-now-shes-studying-at-virginia-tech" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>France 24</strong>
+        <a href="https://first.global/in-the-news/france-24-afghan-girls-robotics-team-design-their-future-in-qatar/" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>Macaroni Kid NRV</strong>
+        <a href="https://nrv.macaronikid.com/articles/6411e7794a01232a11181e2e/ymca-at-virginia-tech-celebrates-women-in-innovation-and-technology" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>RFI</strong>
+        <a href="https://www.rfi.fr/en/business-and-tech/20210922-afghan-girls-robotics-team-design-their-future-in-qatar" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>Nippon.com</strong>
+        <a href="https://www.nippon.com/en/news/reu20210827KBN2FR1JN/" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>Reuters</strong>
+        <a href="https://www.reuters.com/world/asia-pacific/dont-abandon-afghanistan-pleads-member-afghan-all-female-robotics-team-2021-08-26/" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>Al-Fanar Media</strong>
+        <a href="https://www.al-fanarmedia.org/2021/09/afghanistans-all-female-robotics-team-continues-building-robots-in-qatar/" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>Qatar Foundation</strong>
+        <a href="https://www.qf.org.qa/stories/qatar-has-been-the-gateway-to-a-better-life-for-us-says-captain-of-afghan" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>Qatar Day</strong>
+        <a href="https://www.qatarday.com/dont-abandon-afghanistan-pleads-member-of-afghan-all-female-robotics-team" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>Kuwait Times</strong>
+        <a href="https://kuwaittimes.com/afghan-robotics-team-design-future-in-qatar/" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+    <li class="no-icon">
+      <div class="media-text"><strong>WISE — Ayda Haydarpour Biography</strong>
+        <a href="https://www.wise-qatar.org/biography/ayda-haydarpour/" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
   </ul>
 </section>
 
