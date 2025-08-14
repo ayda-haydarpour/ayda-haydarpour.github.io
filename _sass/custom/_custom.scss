@@ -1,11 +1,13 @@
 /* =========================
-   GENERAL LAYOUT WIDTH
+   GLOBAL WIDTH / LAYOUT
    ========================= */
+
+/* Make the overall site container wider */
 .wrap {
-  max-width: 1400px; /* wider overall content area */
+  max-width: 1600px; /* adjust to 1700px if you want even wider */
 }
 
-/* Keep text sections centered and readable */
+/* Keep text-heavy areas centered and readable by default */
 .page__content,
 .hero-inner,
 .skills-card,
@@ -16,35 +18,63 @@
   margin-right: auto;
 }
 
+/* On the homepage, allow key sections to use more width */
+.home-landing .hero-inner,
+.home-landing .skills-card,
+.home-landing .entries-grid--compact,
+.home-landing .media-list {
+  max-width: 1400px; /* bump these up as you like */
+}
+
+/* On very large screens, go wider and show 4-across projects */
+@media (min-width: 1300px) {
+  .home-landing .hero-inner,
+  .home-landing .skills-card,
+  .home-landing .entries-grid--compact,
+  .home-landing .media-list {
+    max-width: 1480px; /* try 1520–1560px for even more width */
+  }
+  .home-landing .entries-grid--compact {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .home-landing .teaser--compact img { height: 190px; }
+}
+
+/* Keep things fluid on tablets/phones */
+@media (max-width: 980px) {
+  .home-landing .hero-inner,
+  .home-landing .skills-card,
+  .home-landing .entries-grid--compact,
+  .home-landing .media-list {
+    max-width: 100%;
+  }
+}
+
 /* Hide duplicate page title on homepage */
 .home-landing .page__title { display: none; }
 
+
 /* =========================
-   HEADER / MASTHEAD
+   HEADER / MASTHEAD POLISH
    ========================= */
 .masthead {
   padding-top: .60rem;
   padding-bottom: .60rem;
   border-bottom: 1px solid #f2f2f2;
 }
-.site-title {
-  font-weight: 700;
-  letter-spacing: .1px;
-}
-.masthead__menu .visible-links a {
-  color: #6b7280;
-}
+.site-title { font-weight: 700; letter-spacing: .1px; }
+.masthead__menu .visible-links a { color: #6b7280; }
 .masthead__menu .visible-links a:hover,
-.masthead__menu .visible-links a:focus {
-  color: #111827;
-}
+.masthead__menu .visible-links a:focus { color: #111827; }
 
-/* If you have a logo image, style it nicely */
+/* Optional: if you use a logo image */
 .site-logo img {
   height: 28px; width: auto; display: block;
   border-radius: 6px; background: #fff;
   box-shadow: inset 0 0 0 1px #eee;
 }
+
 
 /* =========================
    HERO SECTION
@@ -53,17 +83,14 @@
   background: linear-gradient(135deg,#5aa9f4,#39d2c0);
   color: #fff;
   border-radius: 18px;
-  padding: 52px 32px 40px;
+  padding: 52px 32px 40px; /* larger since buttons are removed */
   margin-bottom: 32px;
 }
-.hero-inner {
-  max-width: 1200px; /* matches readable width */
-  margin: 0 auto;
-  text-align: center;
-}
+.hero-inner { text-align: center; }
 .hero-title   { font-size: 44px; margin: 0 0 10px; }
 .hero-subtitle{ font-size: 20px; margin: 0 0 14px; opacity: .98; }
 .hero-intro   { max-width: 720px; margin: 0 auto; font-size: 18px; line-height: 1.6; }
+
 
 /* =========================
    SKILLS CARD
@@ -82,12 +109,13 @@
 .skills-card ul { margin: 0 0 12px 18px; }
 .skills-card li { line-height: 1.7; }
 
+
 /* =========================
-   PROJECTS — COMPACT GRID
+   PROJECTS — COMPACT CARDS
    ========================= */
 .entries-grid--compact {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* becomes 4 at >=1300px */
   gap: 18px;
 }
 .card--compact {
@@ -96,17 +124,13 @@
   overflow: hidden;
   background: #fff;
   box-shadow: 0 6px 12px rgba(0,0,0,.04);
+  display: flex; flex-direction: column;
 }
 .card--compact .card__body { padding: .85rem; }
-.teaser--compact {
-  display: block; width: 100%;
-  overflow: hidden; background: #f7f7f7;
-}
-.teaser--compact img {
-  width: 100%; height: 160px;
-  object-fit: cover; display: block;
-}
-.btn.btn--sm { padding: .4rem .6rem; font-size: .85rem; }
+.teaser--compact { display: block; width: 100%; overflow: hidden; background: #f7f7f7; }
+.teaser--compact img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.btn.btn--sm { padding: .4rem .6rem; font-size: .85rem; align-self: flex-start; }
+
 
 /* =========================
    MEDIA & RECOGNITION
@@ -114,8 +138,7 @@
 .media-list {
   list-style: none;
   margin: 0; padding: 0;
-  display: grid;
-  gap: 12px;
+  display: grid; gap: 12px;
 }
 .media-list li {
   display: grid;
@@ -135,8 +158,7 @@
 }
 .media-icon img {
   display: block;
-  max-width: 28px;
-  max-height: 28px;
+  max-width: 28px; max-height: 28px;
   width: auto; height: auto;
   object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
@@ -144,8 +166,9 @@
 .media-text { display: flex; align-items: center; gap: .6rem; }
 .media-text a { white-space: nowrap; }
 
+
 /* =========================
-   RESPONSIVE
+   RESPONSIVE TWEAKS
    ========================= */
 @media (max-width: 980px) {
   .hero-title { font-size: 36px; }
