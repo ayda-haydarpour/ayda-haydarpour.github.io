@@ -13,7 +13,7 @@ classes: home-landing
     <h1 class="hero-title">Ayda Haydarpour</h1>
     <p class="hero-subtitle">Cloud &amp; Security-Focused Computer Science Student</p>
     <p class="hero-intro">
-      I’m a senior specializing in <strong>cloud architecture</strong>, <strong>cybersecurity</strong>, and
+      I’m a fourth year Computer Science student specializing in <strong>cloud architecture</strong>, <strong>cybersecurity</strong>, and
       <strong>systems development</strong>. I design reliable, scalable solutions with a focus on AWS and security best practices.
     </p>
   </div>
@@ -51,7 +51,6 @@ classes: home-landing
 <section class="section panel section-tight">
   <div class="section-header">
     <h2>Projects</h2>
-    <a class="section-link" href="{{ '/portfolio/' | relative_url }}">See all →</a>
   </div>
 
   {%- assign items = site.portfolio | sort: 'date' | reverse -%}
@@ -88,7 +87,7 @@ classes: home-landing
     <li>
       <span class="media-icon"><img src="{{ '/assets/icons/vogue.svg' | relative_url }}" alt=""></span>
       <div class="media-text">
-        <strong>Teen Vogue — 21 Under 21 (2021)</strong>
+        <strong>Teen Vogue - 21 Under 21 (2021)</strong>
         <a href="https://www.teenvogue.com/gallery/teen-vogues-21-under-21-2021" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
