@@ -36,6 +36,16 @@ html { scroll-behavior: smooth; }
 /* Hide duplicate page title on homepage */
 .home-landing .page__title { display: none; }
 
+/* Accent colors to mirror homepage hero */
+:root{
+  --grad-a:#5aa9f4;
+  --grad-b:#39d2c0;
+  --ink:#111827;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --card-border:#eeeeee;
+  --chip:#f9fafb;
+}
 
 /* =========================
    HEADER / MASTHEAD POLISH
@@ -57,12 +67,11 @@ html { scroll-behavior: smooth; }
   box-shadow: inset 0 0 0 1px #eee;
 }
 
-
 /* =========================
-   HERO SECTION (no buttons)
+   HERO SECTION (homepage)
    ========================= */
 .home-landing .hero-landing {
-  background: linear-gradient(135deg,#5aa9f4,#39d2c0);
+  background: linear-gradient(135deg,var(--grad-a),var(--grad-b));
   color: #fff;
   border-radius: 18px;
   padding: 52px 32px 40px;
@@ -72,7 +81,6 @@ html { scroll-behavior: smooth; }
 .hero-title   { font-size: 44px; margin: 0 0 10px; }
 .hero-subtitle{ font-size: 20px; margin: 0 0 14px; opacity: .98; }
 .hero-intro   { max-width: 720px; margin: 0 auto; font-size: 18px; line-height: 1.6; }
-
 
 /* =========================
    SKILLS CARD
@@ -91,7 +99,6 @@ html { scroll-behavior: smooth; }
 .skills-card ul { margin: 0 0 12px 18px; }
 .skills-card li { line-height: 1.7; }
 
-
 /* =========================
    PROJECTS — WIDE 3-CARD LAYOUT (homepage)
    ========================= */
@@ -100,7 +107,6 @@ html { scroll-behavior: smooth; }
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
-
 .card--wide {
   border: 1px solid #ececec;
   border-radius: 16px;
@@ -110,11 +116,10 @@ html { scroll-behavior: smooth; }
   display: flex;
   flex-direction: column;
 }
-
 .teaser--wide {
   display: block;
   width: 100%;
-  height: 220px;            /* taller, more visual */
+  height: 220px;
   background: #f7f7f7;
   overflow: hidden;
 }
@@ -124,43 +129,32 @@ html { scroll-behavior: smooth; }
   display: block;
   object-fit: cover;
 }
-
 .card--wide .card__body { padding: 1rem; }
 .card--wide .archive__item-title { margin: 0 0 .35rem; font-size: 1.1rem; }
 .card--wide .archive__item-excerpt { margin: 0 0 .65rem; color: #4b5563; }
 .card--wide .btn { align-self: flex-start; }
-
-/* Placeholder visual */
 .teaser--placeholder {
-  background: repeating-linear-gradient(
-    45deg,
-    #f3f4f6,
-    #f3f4f6 10px,
-    #eef2f7 10px,
-    #eef2f7 20px
-  );
+  background: repeating-linear-gradient(45deg,#f3f4f6,#f3f4f6 10px,#eef2f7 10px,#eef2f7 20px);
   position: relative;
 }
 .badge {
   position: absolute;
   top: 10px; left: 10px;
-  background: #111827;
+  background: var(--ink);
   color: #fff;
   font-size: .8rem;
   padding: .25rem .5rem;
   border-radius: 999px;
 }
 
-
 /* =========================
    PROJECT PAGE — NO SIDEBAR (cards, hero)
    ========================= */
-/* Scope to pages with: classes: project-page */
 .project-page .page__content { max-width: 1100px; margin: 0 auto; }
 
 /* Gradient hero to match homepage */
 .project-hero {
-  background: linear-gradient(135deg,#5aa9f4,#39d2c0);
+  background: linear-gradient(135deg,var(--grad-a),var(--grad-b));
   color: #fff;
   border-radius: 18px;
   padding: 36px 24px;
@@ -171,12 +165,12 @@ html { scroll-behavior: smooth; }
 .project-hero__title { font-size: 40px; margin: 0 0 6px; }
 .project-hero__tagline { font-size: 18px; opacity: .98; margin: 0 0 14px; }
 .project-hero__cta { display: inline-flex; gap: 10px; flex-wrap: wrap; }
-.project-hero .btn--primary { background: #111827; color: #fff; }
+.project-hero .btn--primary { background: var(--ink); color: #fff; }
 .project-hero .btn--primary:hover { filter: brightness(1.05); }
 
 /* Generic card section */
 .section-card {
-  background: #fff; border: 1px solid #eee; border-radius: 16px;
+  background: var(--card); border: 1px solid var(--card-border); border-radius: 16px;
   padding: 20px; margin: 16px 0;
   box-shadow: 0 10px 20px rgba(0,0,0,.05);
 }
@@ -188,12 +182,23 @@ html { scroll-behavior: smooth; }
   display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px;
 }
 .fact-card {
-  background: #fff; border: 1px solid #eee; border-radius: 14px; padding: 16px;
-  display: grid; grid-template-columns: 40px 1fr; gap: 12px;
+  background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 16px;
+  display: grid; grid-template-columns: 44px 1fr; gap: 12px;
   box-shadow: 0 10px 18px rgba(0,0,0,.05);
+  align-items: center;
 }
-.fact-emoji { font-size: 24px; display: grid; place-items: center; }
+.fact-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: radial-gradient(120% 120% at 0% 100%, rgba(90,169,244,.18), rgba(57,210,192,.18));
+  display: grid; place-items: center;
+  box-shadow: inset 0 0 0 1px #e8eef8;
+  color: var(--ink);
+}
+.fact-icon svg {
+  width: 26px; height: 26px; display: block; fill: currentColor;
+}
 .fact-content h3 { margin: 0 0 4px; font-size: 16px; }
+.fact-content p { margin: 0; color: var(--muted); }
 
 /* Figure */
 .figure { margin: 0; }
@@ -213,7 +218,7 @@ html { scroll-behavior: smooth; }
 /* Tech badges */
 .stack-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
 .stack-badges span {
-  border: 1px solid #e5e7eb; background: #f9fafb; padding: 6px 10px; border-radius: 999px;
+  border: 1px solid #e5e7eb; background: var(--chip); padding: 6px 10px; border-radius: 999px;
   font-size: 13px;
 }
 
@@ -221,14 +226,13 @@ html { scroll-behavior: smooth; }
 .section-cta {
   display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 18px 0 8px;
 }
-.section-cta .btn--primary { background: #111827; color: #fff; }
+.section-cta .btn--primary { background: var(--ink); color: #fff; }
 
 /* Project page responsive */
 @media (max-width: 900px) {
   .project-hero__title { font-size: 32px; }
   .facts-grid { grid-template-columns: 1fr; }
 }
-
 
 /* =========================
    MEDIA & RECOGNITION
@@ -250,7 +254,7 @@ html { scroll-behavior: smooth; }
 }
 .media-list li {
   display: grid;
-  grid-template-columns: 40px 1fr;  /* rows that include an icon */
+  grid-template-columns: 40px 1fr;
   align-items: center;
   gap: 12px;
   padding: 10px 12px;
@@ -282,7 +286,6 @@ html { scroll-behavior: smooth; }
 .media-list li.no-icon .media-text { margin-left: 0; }
 .media-list li.no-icon { opacity: .96; }
 .media-list li.no-icon:hover { opacity: 1; }
-
 
 /* =========================
    RESPONSIVE TWEAKS (global)
