@@ -20,15 +20,13 @@ teaser: /assets/images/diagram.png
   <div class="project-hero__inner">
     <h1 class="project-hero__title">AWS Multi-Region Resume Site</h1>
     <p class="project-hero__tagline">Secure access control · Multi-region failover · Automated CI/CD</p>
-    <div class="project-hero__cta">
-      <p class="lead">
+
+    <p class="project-hero__intro">
       A static resume site with <strong>secure access control</strong>, <strong>multi-region failover</strong>,
       and <strong>automated deployments</strong> from GitHub.
-      </p>
-    </div>
+    </p>
   </div>
 </section>
-
 
 <!-- QUICK FACTS -->
 <section class="facts">
@@ -36,12 +34,8 @@ teaser: /assets/images/diagram.png
 
     <!-- Stack -->
     <div class="fact-card">
-      <div class="fact-icon">
-        <!-- briefcase/stack icon -->
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M10 6h4a2 2 0 0 1 2 2v1h3a1 1 0 0 1 1 1v3H4V10a1 1 0 0 1 1-1h3V8a2 2 0 0 1 2-2Zm-1 3h6V8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1Z"/>
-          <path d="M4 14h16v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4Z"/>
-        </svg>
+      <div class="fact-icon" aria-hidden="true">
+        <img src="{{ '/assets/icons/briefcase.svg' | relative_url }}" alt="">
       </div>
       <div class="fact-content">
         <h3>Stack</h3>
@@ -51,12 +45,8 @@ teaser: /assets/images/diagram.png
 
     <!-- Focus -->
     <div class="fact-card">
-      <div class="fact-icon">
-        <!-- shield icon -->
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 3 5 6v6c0 4.97 3.05 8.68 7 9.94 3.95-1.26 7-4.97 7-9.94V6l-7-3Z"/>
-          <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+      <div class="fact-icon" aria-hidden="true">
+        <img src="{{ '/assets/icons/shield-check.svg' | relative_url }}" alt="">
       </div>
       <div class="fact-content">
         <h3>Focus</h3>
@@ -66,13 +56,8 @@ teaser: /assets/images/diagram.png
 
     <!-- Outcome -->
     <div class="fact-card">
-      <div class="fact-icon">
-        <!-- rocket icon -->
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M14 3c3.5.5 5.5 2.5 6 6-2.5.5-4.5 1.5-6 3-1.5 1.5-2.5 3.5-3 6-3.5-.5-5.5-2.5-6-6 2.5-.5 4.5-1.5 6-3 1.5-1.5 2.5-3.5 3-6Z"/>
-          <circle cx="15.5" cy="8.5" r="1.5" fill="#fff"/>
-          <path d="M6 18c.5 1.5 1.5 2.5 3 3 .5-1.5.5-2.5 0-3s-1.5-.5-3 0Z"/>
-        </svg>
+      <div class="fact-icon" aria-hidden="true">
+        <img src="{{ '/assets/icons/rocket-launch.svg' | relative_url }}" alt="">
       </div>
       <div class="fact-content">
         <h3>Outcome</h3>
