@@ -15,7 +15,7 @@ include:
   - _pages
 
 # Header navigation — include baseurl for a project site
-nav:
+  nav:
   - title: "Home"
     url: /aydahaydarpour.github.io/
   - title: "Projects"
