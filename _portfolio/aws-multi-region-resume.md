@@ -21,19 +21,14 @@ teaser: /assets/images/diagram.png
     <h1 class="project-hero__title">AWS Multi-Region Resume Site</h1>
     <p class="project-hero__tagline">Secure access control · Multi-region failover · Automated CI/CD</p>
     <div class="project-hero__cta">
-      <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Live Demo</a>
-      <a class="btn" href="#" target="_blank" rel="noopener">View Repo</a>
+      <p class="lead">
+      A static resume site with <strong>secure access control</strong>, <strong>multi-region failover</strong>,
+      and <strong>automated deployments</strong> from GitHub.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- INTRO / LEAD -->
-<section class="section-card">
-  <p class="lead">
-    A static resume site with <strong>secure access control</strong>, <strong>multi-region failover</strong>,
-    and <strong>automated deployments</strong> from GitHub.
-  </p>
-</section>
 
 <!-- QUICK FACTS -->
 <section class="facts">
