@@ -106,25 +106,25 @@ classes: home-landing
   <ul class="media-list">
     <li>
       <span class="media-icon"><img src="{{ '/assets/icons/vogue.svg' | relative_url }}" alt="Teen Vogue" width="28" height="28" loading="lazy"></span>
-      <div class="media-text"><strong>Teen Vogue — 21 Under 21 (2021)</strong>
+      <div class="media-text"><strong>Teen Vogue - 21 Under 21 (2021)</strong>
         <a href="https://www.teenvogue.com/gallery/teen-vogues-21-under-21-2021" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
     <li>
       <span class="media-icon"><img src="{{ '/assets/icons/nbc.svg' | relative_url }}" alt="NBC News" width="28" height="28" loading="lazy"></span>
-      <div class="media-text"><strong>NBC News — Leading Afghan Girls’ Robotics Team</strong>
+      <div class="media-text"><strong>NBC News - Leading Afghan Girls’ Robotics Team</strong>
         <a href="https://www.nbcnews.com/news/world/afghan-female-robotics-team-defiant-after-fleeing-taliban-qatar-n1277464" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
     <li>
       <span class="media-icon"><img src="{{ '/assets/icons/forbes.svg' | relative_url }}" alt="Forbes" width="28" height="28" loading="lazy"></span>
-      <div class="media-text"><strong>Forbes — Afghan Girls Robotics Team Profile</strong>
+      <div class="media-text"><strong>Forbes - Afghan Girls Robotics Team Profile</strong>
         <a href="https://www.forbes.com/profile/afghan-girls-robotic-team/" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
     <li>
       <span class="media-icon"><img src="{{ '/assets/icons/vt.svg' | relative_url }}" alt="Virginia Tech News" width="28" height="28" loading="lazy"></span>
-      <div class="media-text"><strong>Virginia Tech News — Student Spotlight (2022)</strong>
+      <div class="media-text"><strong>Virginia Tech News - Student Spotlight (2022)</strong>
         <a href="https://news.vt.edu/articles/2022/09/ayda-haydarpour.html" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
