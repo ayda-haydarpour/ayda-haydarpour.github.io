@@ -57,7 +57,7 @@ teaser: /assets/images/diagram.png
     <!-- Outcome -->
     <div class="fact-card">
       <div class="fact-icon" aria-hidden="true">
-        <img src="{{ '/assets/icons/rocket-launch.svg' | relative_url }}" alt="">
+        <img src="{{ '/assets/icons/rocket.svg' | relative_url }}" alt="">
       </div>
       <div class="fact-content">
         <h3>Outcome</h3>
