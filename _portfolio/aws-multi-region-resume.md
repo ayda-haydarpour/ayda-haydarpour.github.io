@@ -18,7 +18,6 @@ teaser: /assets/images/diagram.png
 <!-- HERO -->
 <section class="project-hero">
   <div class="project-hero__inner">
-    <h1 class="project-hero__title">AWS Multi-Region Resume Site</h1>
     <p class="project-hero__tagline">Secure access control · Multi-region failover · Automated CI/CD</p>
 
     <p class="project-hero__intro">
