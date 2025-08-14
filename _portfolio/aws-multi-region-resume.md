@@ -31,10 +31,6 @@ teaser: /assets/images/diagram.png
     <li><strong>Focus:</strong> Private-by-default hosting, global delivery, regional failover</li>
     <li><strong>Outcome:</strong> Secure, resilient static site with fast CI/CD</li>
   </ul>
-  <p>
-    <a class="btn btn--primary" href="https://github.com/ayda-hdp/secure-resume-delivery" target="_blank" rel="noopener">View Repo</a>
-    <a class="btn btn--outline" href="https://<your-cloudfront-domain>" target="_blank" rel="noopener">Live Demo</a>
-  </p>
 </div>
 
 ---
