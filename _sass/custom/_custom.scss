@@ -1,67 +1,152 @@
-/* Hide duplicate page title on the homepage */
+/* =========================
+   GENERAL LAYOUT WIDTH
+   ========================= */
+.wrap {
+  max-width: 1400px; /* wider overall content area */
+}
+
+/* Keep text sections centered and readable */
+.page__content,
+.hero-inner,
+.skills-card,
+.entries-grid--compact,
+.media-list {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hide duplicate page title on homepage */
 .home-landing .page__title { display: none; }
 
-/* Tighten site header a bit (optional) */
-.masthead { padding-top: .6rem; padding-bottom: .6rem; }
-.site-title { font-weight: 600; }
-.greedy-nav__toggle { margin-left: .25rem; }
+/* =========================
+   HEADER / MASTHEAD
+   ========================= */
+.masthead {
+  padding-top: .60rem;
+  padding-bottom: .60rem;
+  border-bottom: 1px solid #f2f2f2;
+}
+.site-title {
+  font-weight: 700;
+  letter-spacing: .1px;
+}
+.masthead__menu .visible-links a {
+  color: #6b7280;
+}
+.masthead__menu .visible-links a:hover,
+.masthead__menu .visible-links a:focus {
+  color: #111827;
+}
 
-/* HERO — larger, no buttons needed */
+/* If you have a logo image, style it nicely */
+.site-logo img {
+  height: 28px; width: auto; display: block;
+  border-radius: 6px; background: #fff;
+  box-shadow: inset 0 0 0 1px #eee;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
 .home-landing .hero-landing {
   background: linear-gradient(135deg,#5aa9f4,#39d2c0);
   color: #fff;
   border-radius: 18px;
-  padding: 56px 32px 44px; /* bigger */
+  padding: 52px 32px 40px;
   margin-bottom: 32px;
 }
-.hero-inner { max-width: 920px; margin: 0 auto; text-align: center; }
-.hero-title { font-size: 44px; line-height: 1.1; margin: 0 0 10px; }
-.hero-subtitle { font-size: 20px; margin: 0 0 16px; opacity: .98; }
-.hero-intro { max-width: 720px; margin: 0 auto; font-size: 18px; line-height: 1.6; }
+.hero-inner {
+  max-width: 1200px; /* matches readable width */
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-title   { font-size: 44px; margin: 0 0 10px; }
+.hero-subtitle{ font-size: 20px; margin: 0 0 14px; opacity: .98; }
+.hero-intro   { max-width: 720px; margin: 0 auto; font-size: 18px; line-height: 1.6; }
 
-/* SKILLS — bigger card */
+/* =========================
+   SKILLS CARD
+   ========================= */
 .skills-card {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 36px;
-  background: #fff; border: 1px solid #eee; border-radius: 18px;
-  padding: 28px 28px 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 18px;
+  padding: 28px;
   box-shadow: 0 12px 24px rgba(0,0,0,.05);
 }
 .skills-card h3 { margin: 10px 0 6px; font-size: 20px; }
 .skills-card ul { margin: 0 0 12px 18px; }
 .skills-card li { line-height: 1.7; }
 
-/* PROJECTS — smaller cards like the mock */
+/* =========================
+   PROJECTS — COMPACT GRID
+   ========================= */
 .entries-grid--compact {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 .card--compact {
-  border: 1px solid #ececec; border-radius: 14px; overflow: hidden; background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
   box-shadow: 0 6px 12px rgba(0,0,0,.04);
 }
 .card--compact .card__body { padding: .85rem; }
 .teaser--compact {
-  display: block; width: 100%; overflow: hidden; background: #f7f7f7;
+  display: block; width: 100%;
+  overflow: hidden; background: #f7f7f7;
 }
 .teaser--compact img {
-  width: 100%; height: 160px; object-fit: cover; display: block;
+  width: 100%; height: 160px;
+  object-fit: cover; display: block;
 }
 .btn.btn--sm { padding: .4rem .6rem; font-size: .85rem; }
 
-/* MEDIA — with icons */
+/* =========================
+   MEDIA & RECOGNITION
+   ========================= */
 .media-list {
-  list-style: none; margin: 0; padding: 0;
-  display: grid; gap: 12px;
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  gap: 12px;
 }
 .media-list li {
-  display: grid; grid-template-columns: 36px 1fr; align-items: center; gap: 12px;
-  padding: 8px 10px; border: 1px solid #ececec; border-radius: 12px; background: #fff;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  background: #fff;
 }
-.media-icon img { width: 28px; height: 28px; display: block; }
-.media-text a { margin-left: .6rem; }
+.media-icon {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 8px; background: #fff;
+  box-shadow: inset 0 0 0 1px #f1f1f1;
+}
+.media-icon img {
+  display: block;
+  max-width: 28px;
+  max-height: 28px;
+  width: auto; height: auto;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+}
+.media-text { display: flex; align-items: center; gap: .6rem; }
+.media-text a { white-space: nowrap; }
 
-/* Mobile tweaks */
+/* =========================
+   RESPONSIVE
+   ========================= */
 @media (max-width: 980px) {
   .hero-title { font-size: 36px; }
   .hero-intro { font-size: 16px; }
