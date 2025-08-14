@@ -51,7 +51,6 @@ classes: home-landing
 <section class="section panel section-tight" id="projects">
   <div class="section-header">
     <h2>Projects</h2>
-    <a class="section-link as-link" href="{{ '/portfolio/' | relative_url }}">Show all →</a>
   </div>
 
   <div class="entries-grid--wide">
