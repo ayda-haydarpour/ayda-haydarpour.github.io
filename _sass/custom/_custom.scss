@@ -383,3 +383,9 @@ html { scroll-behavior: smooth; }
   .skills-card { grid-template-columns: 1fr; gap: 18px; }
   .teaser--wide { height: 180px; }
 }
+
+/* Hide the built-in Jekyll page title on project pages */
+.project-page .page__title { 
+  display: none; 
+}
+
