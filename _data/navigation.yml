@@ -1,9 +1,7 @@
 main:
   - title: "Projects"
-    url: /projects/
+    url: /portfolio/
   - title: "Media"
     url: /media/
   - title: "Contact"
-    url: /contact/              # or use a mailto directly:
-  # - title: "Email"
-  #   url: "mailto:aydahaydarpour@gmail.com?subject=Hello%20Ayda"
+    url: "mailto:aydahaydarpour@gmail.com?subject=Hello%20Ayda"
