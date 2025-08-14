@@ -38,7 +38,7 @@ classes: media-page
     <li class="media-card">
       <span class="media-icon"><img src="{{ '/assets/icons/nbc.svg' | relative_url }}" alt="NBC News" loading="lazy" width="28" height="28"></span>
       <div class="media-text">
-        <strong>NBC News — Afghan Female Robotics Team Defiant After Fleeing Taliban</strong>
+        <strong>NBC News — Leading Afghan Girls’ Robotics Team</strong>
         <a class="btn btn--read" href="https://www.nbcnews.com/news/world/afghan-female-robotics-team-defiant-after-fleeing-taliban-qatar-n1277464" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
