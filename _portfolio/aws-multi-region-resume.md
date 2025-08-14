@@ -3,7 +3,6 @@ title: "AWS Multi-Region Resume Site"
 layout: single
 permalink: /portfolio/aws-multi-region-resume/
 excerpt: "Secure, globally distributed static site with failover, access control, and CI/CD."
-date: 2025-08-01
 tags: [AWS, Security, CloudFront, S3, OAC, CI/CD]
 
 # REMOVE left panel
