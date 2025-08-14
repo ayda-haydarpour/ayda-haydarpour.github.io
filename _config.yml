@@ -30,7 +30,7 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-# Defaults: consistent left sidebar, narrower reading width
+# Defaults: consistent left sidebar, narrower reading width, and hide update date
 defaults:
   - scope:
       path: ""
@@ -39,6 +39,8 @@ defaults:
       layout: single
       author_profile: true
       classes: ""
+      show_date: false
+      last_modified_at: false
   - scope:
       path: ""
       type: "portfolio"
@@ -48,6 +50,8 @@ defaults:
       classes: ""
       share: false
       related: false
+      show_date: false
+      last_modified_at: false
 
 author:
   name: "Ayda Haydarpour"
