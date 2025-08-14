@@ -416,3 +416,5 @@ html { scroll-behavior: smooth; }
 .page__footer .page__footer-copyright.custom .sep{
   margin:0 .4rem;
 }
+
+.layout--single .page__footer .page__meta { display: none !important; }
