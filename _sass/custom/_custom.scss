@@ -4,7 +4,7 @@
 
 /* Make the overall site container wider */
 .wrap {
-  max-width: 1600px; /* adjust to 1700px if you want even wider */
+  max-width: 1600px; /* bump to 1700px if you want even wider */
 }
 
 /* Keep text-heavy areas centered and readable by default */
@@ -23,7 +23,7 @@
 .home-landing .skills-card,
 .home-landing .entries-grid--compact,
 .home-landing .media-list {
-  max-width: 1400px; /* bump these up as you like */
+  max-width: 1400px; /* try 1480–1560 if you want even wider */
 }
 
 /* On very large screens, go wider and show 4-across projects */
@@ -32,7 +32,7 @@
   .home-landing .skills-card,
   .home-landing .entries-grid--compact,
   .home-landing .media-list {
-    max-width: 1480px; /* try 1520–1560px for even more width */
+    max-width: 1480px;
   }
   .home-landing .entries-grid--compact {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -165,6 +165,40 @@
 }
 .media-text { display: flex; align-items: center; gap: .6rem; }
 .media-text a { white-space: nowrap; }
+
+
+/* =========================
+   COLLAPSIBLE “SEE ALL” UI
+   ========================= */
+.is-collapsed {
+  position: relative;
+  --collapsed-count: 4; /* default, overridden by data-collapse */
+}
+.is-collapsed > * { display: none; }
+.is-collapsed[data-collapse] > *:nth-child(-n+var(--collapsed-count)) { display: initial; }
+
+/* soft fade overlay when collapsed */
+.is-collapsed::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0; height: 58px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+  border-bottom-left-radius: inherit; border-bottom-right-radius: inherit;
+  pointer-events: none;
+}
+
+/* expanded state */
+.is-expanded > * { display: initial; }
+.is-expanded::after { display: none; }
+
+/* Link-styled toggle button */
+.section-link.as-link {
+  background: none; border: 0; padding: 0;
+  font: inherit; color: #0f766e; cursor: pointer; text-decoration: underline;
+}
+.section-link.as-link:hover { color: #0b4e48; }
+
+/* rounded corners on containers so the fade looks clean */
+#projects-grid, #media-list { border-radius: 14px; }
 
 
 /* =========================
