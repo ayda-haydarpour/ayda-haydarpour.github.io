@@ -6,85 +6,148 @@ excerpt: "Secure, globally distributed static site with failover, access control
 date: 2025-08-01
 tags: [AWS, Security, CloudFront, S3, OAC, CI/CD]
 
-author_profile: true
-sidebar:
-  - title: "Skills"
-    text: |
-      - **Cloud Services:** AWS (EC2, S3, RDS, VPC, Route 53, CloudFront, IAM, CloudWatch, Auto Scaling, Load Balancing)
-      - **Security & Networking:** IAM policies & access control, network security, VPNs & firewalls, data encryption & hashing, monitoring & logging, Security+ best practices
-      - **Programming & Scripting:** Python, Java, C, Bash, JavaScript, HTML/CSS, SQL
-      - **Tools & Platforms:** Linux, Git & GitHub, Wireshark, system monitoring tools
-  - title: "Contact"
-    text: |
-      - **Email:** [aydahaydarpour@gmail.com](mailto:aydahaydarpour@gmail.com)
+# REMOVE left panel
+author_profile: false
+sidebar: []
 
-classes: ""
+# Page hook for CSS below
+classes: project-page
 teaser: /assets/images/diagram.png
 ---
 
-> A static resume site with **secure access control**, **multi-region failover**, and **automated deployments** from GitHub.
+<!-- HERO -->
+<section class="project-hero">
+  <div class="project-hero__inner">
+    <h1 class="project-hero__title">AWS Multi-Region Resume Site</h1>
+    <p class="project-hero__tagline">Secure access control · Multi-region failover · Automated CI/CD</p>
+    <div class="project-hero__cta">
+      <a class="btn btn--primary" href="https://github.com/ayda-hdp" target="_blank" rel="noopener">View Repo</a>
+      <a class="btn" href="{{ '/' | relative_url }}#projects">Back to Projects</a>
+    </div>
+  </div>
+</section>
 
-<div class="panel">
-  <strong>Quick facts</strong>
+<!-- INTRO / LEAD -->
+<section class="section-card">
+  <p class="lead">
+    A static resume site with <strong>secure access control</strong>, <strong>multi-region failover</strong>,
+    and <strong>automated deployments</strong> from GitHub.
+  </p>
+</section>
+
+<!-- QUICK FACTS -->
+<section class="facts">
+  <div class="facts-grid">
+    <div class="fact-card">
+      <div class="fact-emoji">🧰</div>
+      <div class="fact-content">
+        <h3>Stack</h3>
+        <p>CloudFront (OAC, origin groups), S3 (private), IAM, Route 53, GitHub Actions</p>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-emoji">🛡️</div>
+      <div class="fact-content">
+        <h3>Focus</h3>
+        <p>Private-by-default hosting, global delivery, regional failover</p>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-emoji">🚀</div>
+      <div class="fact-content">
+        <h3>Outcome</h3>
+        <p>Secure, resilient static site with fast CI/CD</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOALS -->
+<section class="section-card">
+  <h2>Goals</h2>
   <ul>
-    <li><strong>Stack:</strong> CloudFront (OAC, origin groups), S3 (private), IAM, Route 53, GitHub Actions</li>
-    <li><strong>Focus:</strong> Private-by-default hosting, global delivery, regional failover</li>
-    <li><strong>Outcome:</strong> Secure, resilient static site with fast CI/CD</li>
+    <li>Host a static site securely without making S3 buckets public.</li>
+    <li>Deliver globally with low latency using CloudFront.</li>
+    <li>Set up failover between two AWS regions.</li>
+    <li>Automate deployments from GitHub.</li>
   </ul>
-</div>
+</section>
 
----
+<!-- ARCHITECTURE -->
+<section class="section-card">
+  <h2>Architecture</h2>
+  <figure class="figure">
+    <img src="{{ '/assets/images/diagram.png' | relative_url }}" alt="Architecture Diagram">
+    <figcaption>CloudFront with OAC, origin-group failover (us-east-1 → eu-west-1), Route 53, S3 private buckets, GitHub Actions for CI/CD.</figcaption>
+  </figure>
 
-## Goals
-- Host a static site securely without making S3 buckets public.
-- Deliver globally with low latency using CloudFront.
-- Set up failover between two AWS regions.
-- Automate deployments from GitHub.
+  <div class="callout callout--info">
+    <strong>Why this design?</strong> CloudFront + OAC keeps S3 private, origin groups enable regional failover,
+    and GitHub Actions push to both regions then invalidate the CDN for near-instant updates.
+  </div>
+</section>
 
----
+<!-- HOW IT'S BUILT -->
+<section class="section-card">
+  <h2>How it’s built</h2>
 
-## Architecture
+  <div class="stack-badges">
+    <span>CloudFront (OAC, origin groups)</span>
+    <span>S3 (private)</span>
+    <span>IAM</span>
+    <span>Route 53</span>
+    <span>GitHub Actions</span>
+  </div>
 
-![Architecture Diagram]({{ '/assets/images/diagram.png' | relative_url }}){: .align-center width="760" }
+  <h3>S3 Buckets</h3>
+  <ul>
+    <li>Two <strong>private</strong> buckets:
+      <ul>
+        <li><code>ayda-resume-us-east-1</code> (primary)</li>
+        <li><code>ayda-resume-eu-west-1</code> (secondary)</li>
+      </ul>
+    </li>
+    <li>Store <code>index.html</code>, <code>style.css</code>, and <code>resume.pdf</code>.</li>
+  </ul>
 
-{:.notice--info}
-**Why this design?** CloudFront + OAC keeps S3 private, origin groups enable regional failover, and GitHub Actions push to both regions then invalidate the CDN for near-instant updates.
+  <h3>CloudFront</h3>
+  <ul>
+    <li><strong>Origin Access Control (OAC)</strong> so S3 stays private.</li>
+    <li><strong>Origin group</strong> with failover (primary us-east-1, secondary eu-west-1).</li>
+    <li>Forces <strong>HTTPS</strong>; default root object = <code>index.html</code>.</li>
+  </ul>
 
----
+  <h3>Security</h3>
+  <ul>
+    <li>Bucket policies allow only CloudFront (via OAC).</li>
+    <li>No public S3 access. Optionally add WAF for extra hardening.</li>
+  </ul>
 
-## How it’s built
+  <h3>CI/CD</h3>
+  <ol>
+    <li>GitHub Actions sync files to both S3 buckets.</li>
+    <li>Invalidate CloudFront so updates go live immediately.</li>
+  </ol>
+</section>
 
-{:.notice--primary}
-**Stack:** CloudFront (OAC, origin groups) · S3 (private) · IAM · Route 53 · GitHub Actions
+<!-- RESULTS -->
+<section class="section-card">
+  <h2>Results</h2>
+  <ul>
+    <li><strong>Private-by-default hosting</strong> with CDN performance.</li>
+    <li><strong>Regional resilience</strong> (automatic failover).</li>
+    <li><strong>Fast releases</strong> via CI/CD and cache invalidation.</li>
+  </ul>
+</section>
 
-**S3 Buckets**  
-- Two **private** buckets:
-  - `ayda-resume-us-east-1` (primary)
-  - `ayda-resume-eu-west-1` (secondary)
-- Store `index.html`, `style.css`, and `resume.pdf`.
+<!-- DEMO -->
+<section class="section-card">
+  <h2>Demo</h2>
+  {% include video id="60pCkb77k8s" provider="youtube" %}
+</section>
 
-**CloudFront**  
-- **Origin Access Control (OAC)** so S3 stays private.  
-- **Origin group** with failover (primary us-east-1, secondary eu-west-1).  
-- Forces **HTTPS**; default root object = `index.html`.
-
-**Security**  
-- Bucket policies allow only CloudFront (via OAC).  
-- No public S3 access. Optionally add WAF for extra hardening.
-
-**CI/CD**  
-- GitHub Actions:
-  1. Sync files to both S3 buckets.
-  2. Invalidate CloudFront so updates go live immediately.
-
----
-
-## Results
-- **Private-by-default hosting** with CDN performance.  
-- **Regional resilience** (automatic failover).  
-- **Fast releases** via CI/CD and cache invalidation.
-
----
-
-## Demo
-{% include video id="60pCkb77k8s" provider="youtube" %}
+<!-- FOOTER CTA -->
+<section class="section-cta">
+  <a class="btn btn--primary" href="https://github.com/ayda-hdp" target="_blank" rel="noopener">View Repo</a>
+  <a class="btn" href="{{ '/' | relative_url }}#projects">Back to Projects</a>
+</section>
