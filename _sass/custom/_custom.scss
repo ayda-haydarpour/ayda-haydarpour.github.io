@@ -394,10 +394,25 @@ html { scroll-behavior: smooth; }
   display: none;
 }
 
-/* Style my custom footer line */
-.page__footer .page__footer-copyright.custom {
-  text-align: center;
-  color: #6b7280;
-  font-size: 0.95rem;
-  padding: 12px 0; /* optional: adds a little breathing room */
+
+
+
+/* Footer: show only my custom line */
+.page__footer .page__footer-copyright:not(.custom){display:none!important;}
+
+/* Footer link styling */
+.page__footer .page__footer-copyright.custom{
+  text-align:center;
+  color:#6b7280;
+  font-size:.95rem;
+  padding:12px 0;
+}
+.page__footer .page__footer-copyright.custom a{
+  color:#0f766e; text-decoration:none;
+}
+.page__footer .page__footer-copyright.custom a:hover{
+  text-decoration:underline;
+}
+.page__footer .page__footer-copyright.custom .sep{
+  margin:0 .4rem;
 }
