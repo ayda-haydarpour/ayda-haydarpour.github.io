@@ -21,8 +21,6 @@ teaser: /assets/images/diagram.png
     <h1 class="project-hero__title">AWS Multi-Region Resume Site</h1>
     <p class="project-hero__tagline">Secure access control · Multi-region failover · Automated CI/CD</p>
     <div class="project-hero__cta">
-      <a class="btn btn--primary" href="https://github.com/ayda-hdp" target="_blank" rel="noopener">View Repo</a>
-      <a class="btn" href="{{ '/' | relative_url }}#projects">Back to Projects</a>
     </div>
   </div>
 </section>
@@ -146,8 +144,3 @@ teaser: /assets/images/diagram.png
   {% include video id="60pCkb77k8s" provider="youtube" %}
 </section>
 
-<!-- FOOTER CTA -->
-<section class="section-cta">
-  <a class="btn btn--primary" href="https://github.com/ayda-hdp" target="_blank" rel="noopener">View Repo</a>
-  <a class="btn" href="{{ '/' | relative_url }}#projects">Back to Projects</a>
-</section>
