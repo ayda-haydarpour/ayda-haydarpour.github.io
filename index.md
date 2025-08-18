@@ -73,7 +73,7 @@ classes: home-landing
     <!-- 2) NEW PROJECT: Serverless Event Signup -->
     <article class="archive__item panel card--wide">
       <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">
-        <img src="{{ '/assets/images/serverless-signup-diagram.png' | relative_url }}" alt="AWS Serverless Event Signup architecture">
+        <img src="{{ '/assets/images/serverless.png' | relative_url }}" alt="AWS Serverless Event Signup architecture">
       </a>
       <div class="card__body">
         <h3 class="archive__item-title">
