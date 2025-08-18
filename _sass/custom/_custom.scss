@@ -418,3 +418,17 @@ html { scroll-behavior: smooth; }
 }
 
 .layout--single .page__footer .page__meta { display: none !important; }
+
+/* Show full draw.io diagrams in project cards (no cropping) */
+.teaser--wide {
+  aspect-ratio: 16 / 9;   /* consistent, widescreen box */
+  height: auto;           /* let aspect-ratio control height */
+  background: #0d0d0d;    /* matches your dark diagrams */
+}
+.teaser--wide img {
+  object-fit: contain;    /* show entire image */
+  object-position: center;
+  padding: 6px;           /* little breathing room */
+  image-rendering: -webkit-optimize-contrast;
+}
+
