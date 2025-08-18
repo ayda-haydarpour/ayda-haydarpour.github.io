@@ -80,7 +80,7 @@ classes: home-landing
           <a href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">Serverless Event Signup (AWS)</a>
         </h3>
         <p class="archive__item-excerpt">
-          Lambda + DynamoDB + SES with an S3 front-end and API Gateway — least-privilege IAM, CORS, and CloudWatch logs.
+          Lambda + DynamoDB + SES with an S3 front-end and API Gateway - least-privilege IAM, CORS, and CloudWatch logs.
         </p>
         <a class="btn btn--sm" href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">View</a>
       </div>
