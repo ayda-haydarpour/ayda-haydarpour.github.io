@@ -19,12 +19,11 @@ teaser: /assets/images/serverless.png
     <p class="project-hero__tagline">Serverless data capture · Email confirmation · Least-privilege IAM</p>
 
     <p class="project-hero__intro">
-      A minimal, production-ready signup flow built on <strong>AWS Lambda</strong>, <strong>API Gateway (HTTP API)</strong>,
-      <strong>DynamoDB</strong>, and <strong>Amazon SES</strong>, with a static front-end on <strong>S3</strong>.
-      It uses CORS, environment-based configuration, and logs to CloudWatch.
+      A lean, serverless signup flow: API Gateway (HTTP) triggers Lambda to store registrations in DynamoDB and email confirmations via SES. The front end runs on S3, with CORS enabled, environment-based configuration, and CloudWatch logging.
     </p>
   </div>
 </section>
+
 
 <!-- QUICK FACTS -->
 <section class="facts">
