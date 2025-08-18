@@ -47,7 +47,7 @@ classes: home-landing
   </div>
 </section>
 
-<!-- PROJECTS — 3 WIDE CARDS (1 real + 2 placeholders) -->
+<!-- PROJECTS — 3 WIDE CARDS -->
 <section class="section panel section-tight" id="projects">
   <div class="section-header">
     <h2>Projects</h2>
@@ -70,15 +70,19 @@ classes: home-landing
       </div>
     </article>
 
-    <!-- 2) PLACEHOLDER -->
+    <!-- 2) NEW PROJECT: Serverless Event Signup -->
     <article class="archive__item panel card--wide">
-      <div class="archive__item-teaser teaser--wide teaser--placeholder">
-        <span class="badge">Coming soon</span>
-      </div>
+      <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">
+        <img src="{{ '/assets/images/serverless-signup-diagram.png' | relative_url }}" alt="AWS Serverless Event Signup architecture">
+      </a>
       <div class="card__body">
-        <h3 class="archive__item-title">Project in Progress</h3>
-        <p class="archive__item-excerpt">A security-focused build exploring IAM least privilege and automated auditing.</p>
-        <a class="btn btn--sm" href="#">Stay tuned</a>
+        <h3 class="archive__item-title">
+          <a href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">Serverless Event Signup (AWS)</a>
+        </h3>
+        <p class="archive__item-excerpt">
+          Lambda + DynamoDB + SES with an S3 front-end and API Gateway — least-privilege IAM, CORS, and CloudWatch logs.
+        </p>
+        <a class="btn btn--sm" href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">View</a>
       </div>
     </article>
 
@@ -96,7 +100,7 @@ classes: home-landing
   </div>
 </section>
 
-<!-- MEDIA (4 items with logos + Show all) -->
+<!-- MEDIA (unchanged) -->
 <section class="section panel section-tight" id="media">
   <div class="section-header">
     <h2>Media & Recognition</h2>
