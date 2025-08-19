@@ -133,5 +133,8 @@ teaser: /assets/images/serverless.png
 <section class="section-card">
   <h2>Demo</h2>
   {% include video id="zhtm_V9lOd0" provider="youtube" %}
-  <p><a href="https://youtu.be/zhtm_V9lOd0" target="_blank" rel="noopener">Watch on YouTube ↗</a></p>
 </section>
+
+
+
+
