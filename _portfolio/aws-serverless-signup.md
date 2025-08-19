@@ -132,6 +132,6 @@ teaser: /assets/images/serverless.png
 <!-- DEMO -->
 <section class="section-card">
   <h2>Demo</h2>
-  {% comment %} Replace VIDEO_ID with your final YouTube ID {% endcomment %}
-  {% include video id="VIDEO_ID" provider="youtube" %}
+  {% include video id="zhtm_V9lOd0" provider="youtube" %}
+  <p><a href="https://youtu.be/zhtm_V9lOd0" target="_blank" rel="noopener">Watch on YouTube ↗</a></p>
 </section>
