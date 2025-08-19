@@ -22,12 +22,11 @@ teaser: /assets/images/custom-shell.png
     <p class="project-hero__tagline">Parsing · Pipelines · Redirection · Job Control · Signals</p>
 
     <p class="project-hero__intro">
-      A minimal, fast shell implemented in <strong>C</strong> with a tokenizer and parser, support for
-      <strong>pipes</strong> and <strong>I/O redirection</strong>, <strong>foreground/background jobs</strong>, and
-      <strong>signal handling</strong> (SIGINT/SIGTSTP/SIGCHLD). Built-ins include <code>cd</code>, <code>exit</code>,
-      <code>export</code>, <code>unset</code>, <code>jobs</code>, <code>fg</code>, and <code>bg</code>. 
-      <em>Note: This was a class project; no source code is published.</em>
+    A minimal Unix shell written in <strong>C</strong> with a real tokenizer/parser, support for
+    <strong>pipelines</strong> and <strong>I/O redirection</strong>, foreground/background <strong>job control</strong>,
+    and robust <strong>signal handling</strong>.
     </p>
+
   </div>
 </section>
 
@@ -89,11 +88,6 @@ teaser: /assets/images/custom-shell.png
     <img src="{{ '/assets/images/custom-shell.png' | relative_url }}" alt="Custom Shell terminal screenshot">
     <figcaption>Tokenizer &amp; parser build an AST; executor sets up pipes and redirection; jobs run in foreground/background with proper signal handling.</figcaption>
   </figure>
-
-  <div class="callout callout--info">
-    <strong>About disclosure:</strong> This was completed as part of a course. To respect academic policy, 
-    I’m sharing architecture and behavior only—no source code.
-  </div>
 </section>
 
 <!-- HOW IT'S BUILT -->
