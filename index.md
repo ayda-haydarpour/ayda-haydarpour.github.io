@@ -70,7 +70,7 @@ classes: home-landing
       </div>
     </article>
 
-    <!-- 2) NEW PROJECT: Serverless Event Signup -->
+    <!-- 2) REAL PROJECT: Serverless Event Signup -->
     <article class="archive__item panel card--wide">
       <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">
         <img src="{{ '/assets/images/serverless.png' | relative_url }}" alt="AWS Serverless Event Signup architecture">
@@ -86,15 +86,19 @@ classes: home-landing
       </div>
     </article>
 
-    <!-- 3) PLACEHOLDER -->
+    <!-- 3) NEW PROJECT: Custom Unix Shell -->
     <article class="archive__item panel card--wide">
-      <div class="archive__item-teaser teaser--wide teaser--placeholder">
-        <span class="badge">Coming soon</span>
-      </div>
+      <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/custom-shell/' | relative_url }}">
+        <img src="{{ '/assets/images/custom-shell.png' | relative_url }}" alt="Custom Unix Shell (C)">
+      </a>
       <div class="card__body">
-        <h3 class="archive__item-title">Project in Progress</h3>
-        <p class="archive__item-excerpt">Cloud cost monitoring with alerts, budgets, and dashboards.</p>
-        <a class="btn btn--sm" href="#">Stay tuned</a>
+        <h3 class="archive__item-title">
+          <a href="{{ '/portfolio/custom-shell/' | relative_url }}">Custom Unix Shell (C)</a>
+        </h3>
+        <p class="archive__item-excerpt">
+          From-scratch shell with parsing, pipes, redirection, job control, and signal handling — no source code shared.
+        </p>
+        <a class="btn btn--sm" href="{{ '/portfolio/custom-shell/' | relative_url }}">View</a>
       </div>
     </article>
   </div>
