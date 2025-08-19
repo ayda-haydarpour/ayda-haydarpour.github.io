@@ -12,7 +12,7 @@ sidebar: []
 classes: project-page
 
 # Thumbnail/teaser for cards
-teaser: /assets/images/custom-shell.png
+teaser: /assets/images/cush.png
 ---
 
 <!-- HERO -->
@@ -85,7 +85,7 @@ teaser: /assets/images/custom-shell.png
 <section class="section-card">
   <h2>Execution Flow</h2>
   <figure class="figure">
-    <img src="{{ '/assets/images/custom-shell.png' | relative_url }}" alt="Custom Shell terminal screenshot">
+    <img src="{{ '/assets/images/cush.png' | relative_url }}" alt="Custom Shell terminal screenshot">
     <figcaption>Tokenizer &amp; parser build an AST; executor sets up pipes and redirection; jobs run in foreground/background with proper signal handling.</figcaption>
   </figure>
 </section>
