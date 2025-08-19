@@ -89,14 +89,15 @@ classes: home-landing
     <!-- 3) NEW PROJECT: Custom Unix Shell -->
     <article class="archive__item panel card--wide">
       <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/custom-shell/' | relative_url }}">
-        <img src="{{ '/assets/images/custom-shell.png' | relative_url }}" alt="Custom Unix Shell (C)">
+        <img src="{{ '/assets/images/cush.png' | relative_url }}" alt="Custom Unix Shell (C)">
       </a>
       <div class="card__body">
         <h3 class="archive__item-title">
           <a href="{{ '/portfolio/custom-shell/' | relative_url }}">Custom Unix Shell (C)</a>
         </h3>
         <p class="archive__item-excerpt">
-          From-scratch shell with parsing, pipes, redirection, job control, and signal handling — no source code shared.
+          C-based Unix shell with parsing, pipelines, I/O redirection, job control, and robust signal handling.
+
         </p>
         <a class="btn btn--sm" href="{{ '/portfolio/custom-shell/' | relative_url }}">View</a>
       </div>
