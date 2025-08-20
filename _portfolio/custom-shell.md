@@ -125,6 +125,5 @@ teaser: /assets/images/cush.png
 <!-- DEMO -->
 <section class="section-card">
   <h2>Demo</h2>
-  {% comment %} Replace VIDEO_ID when you upload a short terminal walkthrough {% endcomment %}
-  {% include video id="VIDEO_ID" provider="youtube" %}
+  {% include video id="LHpC18NpsEU" provider="youtube" %}
 </section>
