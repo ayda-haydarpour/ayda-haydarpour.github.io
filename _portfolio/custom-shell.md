@@ -51,7 +51,7 @@ teaser: /assets/images/cush.png
       </div>
       <div class="fact-content">
         <h3>Stack</h3>
-        <p>C (POSIX); posix_spawnp, pipe, dup2, setpgid/tcsetpgrp, waitpid, termios, readline/history</p>
+        <p>C (POSIX); posix_spawnp, pipe, dup2, setpgid, waitpid, termios, readline</p>
       </div>
     </div>
 
