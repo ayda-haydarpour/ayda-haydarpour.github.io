@@ -22,14 +22,23 @@ teaser: /assets/images/cush.png
     <p class="project-hero__tagline">Parsing · Pipelines · Redirection · Job Control · Signals</p>
 
     <p class="project-hero__intro">
-      A minimal Unix shell in <strong>C</strong> that parses commands into an AST, builds <strong>pipelines</strong>,
-      wires <strong>I/O redirection</strong>, and manages foreground/background <strong>jobs</strong> with correct signal handling.
-      Children are launched with <code>posix_spawnp</code>, placed into a process group, and synchronized via a
-      <code>SIGCHLD</code> handler and <code>waitpid</code>. Foreground control is transferred with <code>tcsetpgrp</code> and
-      restored safely.
+      A minimal Unix shell in <strong>C</strong> that parses commands to an AST, builds <strong>pipelines</strong> and <strong>I/O redirection</strong>, and manages fg/bg <strong>jobs</strong> with proper signal handling. Children launch via posix_spawnp, run in process groups, are reaped with waitpid/SIGCHLD, and foreground control is handed off and restored with tcsetpgrp.
     </p>
   </div>
 </section>
+
+<style>
+/* Remove code “pill” styling in the blue hero only (no white background) */
+.project-hero code,
+.project-hero kbd {
+  background: transparent !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  font-family: inherit;
+  font-weight: 700;
+}
+</style>
 
 <!-- QUICK FACTS -->
 <section class="facts">
@@ -53,7 +62,7 @@ teaser: /assets/images/cush.png
       </div>
       <div class="fact-content">
         <h3>Focus</h3>
-        <p>Input parsing, process control, safe execution, robust error handling</p>
+        <p>Parsing, process control, safe execution, solid error handling</p>
       </div>
     </div>
 
@@ -64,7 +73,7 @@ teaser: /assets/images/cush.png
       </div>
       <div class="fact-content">
         <h3>Outcome</h3>
-        <p>Reliable pipelines and job control; stable under <code>Ctrl-C</code>/<code>Ctrl-Z</code> with no zombies</p>
+        <p>Reliable pipelines &amp; job control; stable under <code>Ctrl-C</code>/<code>Ctrl-Z</code>; no zombies</p>
       </div>
     </div>
 
