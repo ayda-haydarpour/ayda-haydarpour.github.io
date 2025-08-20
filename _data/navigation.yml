@@ -1,6 +1,7 @@
 main:
   - title: "Projects"
-    url: /portfolio/
+    #url: /portfolio/
+    url: "/#projects" 
   - title: "Media"
     url: /media/
   - title: "Contact"
