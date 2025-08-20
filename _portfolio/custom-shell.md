@@ -2,8 +2,8 @@
 title: "Custom Unix Shell (C)"
 layout: single
 permalink: /portfolio/custom-shell/
-excerpt: "A from-scratch shell with parsing, pipelines, redirection, job control, and robust signal handling."
-tags: [C, Systems, UNIX, Security, Parsing]
+excerpt: "From-scratch shell with AST parsing, pipelines, I/O redirection, job control (fg/bg), and robust signal handling."
+tags: [C, Systems, UNIX, POSIX, Parsing]
 
 author_profile: false
 sidebar: []
@@ -22,11 +22,12 @@ teaser: /assets/images/cush.png
     <p class="project-hero__tagline">Parsing · Pipelines · Redirection · Job Control · Signals</p>
 
     <p class="project-hero__intro">
-    A minimal Unix shell written in <strong>C</strong> with a real tokenizer/parser, support for
-    <strong>pipelines</strong> and <strong>I/O redirection</strong>, foreground/background <strong>job control</strong>,
-    and robust <strong>signal handling</strong>.
+      A minimal Unix shell in <strong>C</strong> that parses commands into an AST, builds <strong>pipelines</strong>,
+      wires <strong>I/O redirection</strong>, and manages foreground/background <strong>jobs</strong> with correct signal handling.
+      Children are launched with <code>posix_spawnp</code>, placed into a process group, and synchronized via a
+      <code>SIGCHLD</code> handler and <code>waitpid</code>. Foreground control is transferred with <code>tcsetpgrp</code> and
+      restored safely.
     </p>
-
   </div>
 </section>
 
@@ -41,7 +42,7 @@ teaser: /assets/images/cush.png
       </div>
       <div class="fact-content">
         <h3>Stack</h3>
-        <p>C (POSIX), fork/exec, pipe, dup2, waitpid, termios, signal handlers</p>
+        <p>C (POSIX); <code>posix_spawnp</code>, <code>pipe</code>, <code>dup2</code>, <code>setpgid</code>/<code>tcsetpgrp</code>, <code>waitpid</code>, <code>termios</code>, <code>readline</code>/history</p>
       </div>
     </div>
 
@@ -63,7 +64,7 @@ teaser: /assets/images/cush.png
       </div>
       <div class="fact-content">
         <h3>Outcome</h3>
-        <p>Reliable shell behavior with pipelines and jobs; stable under signals</p>
+        <p>Reliable pipelines and job control; stable under <code>Ctrl-C</code>/<code>Ctrl-Z</code> with no zombies</p>
       </div>
     </div>
 
@@ -74,10 +75,10 @@ teaser: /assets/images/cush.png
 <section class="section-card">
   <h2>Goals</h2>
   <ul>
-    <li>Implement a usable shell that supports pipelines and file descriptor redirection.</li>
-    <li>Handle UNIX job control (foreground/background) and signals correctly.</li>
-    <li>Provide core built-ins and environment variable expansion.</li>
-    <li>Maintain safety: close unused FDs, prevent zombies, and report errors clearly.</li>
+    <li>Implement a usable shell that supports pipelines and file-descriptor redirection (<code>&lt;</code>, <code>&gt;</code>, <code>&gt;&gt;</code>, stderr routing).</li>
+    <li>Handle UNIX job control (foreground/background) and signals correctly (<code>SIGINT</code>, <code>SIGTSTP</code>, <code>SIGCHLD</code>).</li>
+    <li>Provide core built-ins and history expansion.</li>
+    <li>Maintain safety: close unused FDs (<code>O_CLOEXEC</code>), prevent zombies, and report errors clearly.</li>
   </ul>
 </section>
 
@@ -86,7 +87,7 @@ teaser: /assets/images/cush.png
   <h2>Execution Flow</h2>
   <figure class="figure">
     <img src="{{ '/assets/images/cush.png' | relative_url }}" alt="Custom Shell terminal screenshot">
-    <figcaption>Tokenizer &amp; parser build an AST; executor sets up pipes and redirection; jobs run in foreground/background with proper signal handling.</figcaption>
+    <figcaption>Tokenizer &amp; parser build an AST; executor sets up pipes/redirection; jobs run in FG/BG with proper signal handling; job table stays in sync via <code>SIGCHLD</code>.</figcaption>
   </figure>
 </section>
 
@@ -104,11 +105,10 @@ teaser: /assets/images/cush.png
 
   <h3>Key behaviors</h3>
   <ul>
-    <li><strong>Pipelines:</strong> constructs pipe chains and connects stdout/stdin across children.</li>
-    <li><strong>Redirection:</strong> sets up <code>dup2()</code> for <code>&gt;</code>, <code>&lt;</code>, and stderr routing.</li>
-    <li><strong>Jobs:</strong> tracks process groups; supports <code>fg</code>/<code>bg</code> and a <code>jobs</code> listing.</li>
-    <li><strong>Signals:</strong> delivers Ctrl-C/Z correctly; reaps children with <code>waitpid()</code>.</li>
-    <li><strong>Built-ins:</strong> <code>cd</code>, <code>exit</code>, <code>export</code>/<code>unset</code>, <code>jobs</code>, <code>fg</code>, <code>bg</code>.</li>
+    <li><strong>Pipelines:</strong> build <em>n−1</em> pipes; connect stdout/stdin across children.</li>
+    <li><strong>Redirection:</strong> <code>&lt;</code>, <code>&gt;</code>, <code>&gt;&gt;</code>, optional stderr→stdout via <code>dup2</code>; close unused FDs.</li>
+    <li><strong>Jobs:</strong> track process groups; supports <code>jobs</code>, <code>fg</code>, <code>bg</code>, <code>stop</code>, <code>kill</code>, plus built-ins <code>cd</code> and <code>exit</code>; <code>history</code> via readline.</li>
+    <li><strong>Signals:</strong> deliver <code>Ctrl-C</code>/<code>Ctrl-Z</code> to the foreground process group; reap children with <code>waitpid()</code> in a <code>SIGCHLD</code> handler.</li>
   </ul>
 </section>
 
@@ -116,9 +116,9 @@ teaser: /assets/images/cush.png
 <section class="section-card">
   <h2>Results</h2>
   <ul>
-    <li>Correct pipeline behavior and exit status propagation.</li>
-    <li>Stable under signal storms (Ctrl-C / Ctrl-Z) with no zombie processes.</li>
-    <li>Resource hygiene: closes unused file descriptors; consistent error paths.</li>
+    <li>Correct pipeline behavior and exit-status propagation.</li>
+    <li>No zombie processes; resilient under repeated interrupts/suspends.</li>
+    <li>Consistent resource hygiene and clear error paths.</li>
   </ul>
 </section>
 
