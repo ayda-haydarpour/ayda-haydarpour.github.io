@@ -29,18 +29,37 @@ teaser: /assets/images/server.png
 <!-- QUICK FACTS -->
 <section class="facts">
   <div class="facts-grid">
+
     <div class="fact-card">
-      <h3>Stack</h3>
-      <p>C (POSIX sockets, pthreads), libjwt, Jansson</p>
+      <div class="fact-icon">
+        <img src="{{ '/assets/icons/briefcase.svg' | relative_url }}" alt="">
+      </div>
+      <div class="fact-content">
+        <h3>Stack</h3>
+        <p>C (POSIX sockets, pthreads), libjwt, Jansson</p>
+      </div>
     </div>
+
     <div class="fact-card">
-      <h3>Focus</h3>
-      <p>Concurrency, secure auth, and media streaming</p>
+      <div class="fact-icon">
+        <img src="{{ '/assets/icons/shield-check.svg' | relative_url }}" alt="">
+      </div>
+      <div class="fact-content">
+        <h3>Focus</h3>
+        <p>Concurrency, secure auth, media streaming</p>
+      </div>
     </div>
+
     <div class="fact-card">
-      <h3>Outcome</h3>
-      <p>A functional HTTP/1.1 server handling multiple clients, secure endpoints, and smooth video delivery.</p>
+      <div class="fact-icon">
+        <img src="{{ '/assets/icons/rocket.svg' | relative_url }}" alt="">
+      </div>
+      <div class="fact-content">
+        <h3>Outcome</h3>
+        <p>HTTP/1.1 server handling multiple clients and smooth video delivery</p>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -68,7 +87,7 @@ teaser: /assets/images/server.png
   </figure>
 
   <div class="callout callout--info">
-    <strong>Key features:</strong> JWT cookies for secure access, HTTP/1.1 keep-alive for multiple requests per connection, 
+    <strong>Key features:</strong> JWT cookies for secure access, HTTP/1.1 keep-alive for multiple requests per connection,
     and range requests for efficient video streaming.
   </div>
 </section>
@@ -104,7 +123,7 @@ teaser: /assets/images/server.png
     <li>Supports <code>Range</code> headers for partial requests (<code>206 Partial Content</code>), enabling smooth streaming and scrubbing.</li>
   </ul>
 
-  <h3>Concurrency & Protocol</h3>
+  <h3>Concurrency &amp; Protocol</h3>
   <ul>
     <li>Threaded design handles multiple clients concurrently.</li>
     <li>HTTP/1.1 keep-alive supported for persistent connections.</li>
