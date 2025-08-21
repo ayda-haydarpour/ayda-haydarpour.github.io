@@ -3,7 +3,7 @@ title: "Personal Web & Video Server (C)"
 layout: single
 permalink: /portfolio/personal-server/
 excerpt: "Multithreaded HTTP/1.1 server with static files, JWT authentication, and MP4 streaming."
-tags: [C, Systems, Networking, HTTP, Security]
+tags: [C, Systems, Networking, HTTP, Security, Docker, Kubernetes]
 
 author_profile: false
 sidebar: []
@@ -131,6 +131,28 @@ teaser: /assets/images/server.png
   </ul>
 </section>
 
+<!-- CONTAINERIZATION -->
+<section class="section-card">
+  <h2>Containerization & Deployment</h2>
+  <p>
+    As part of the project exercise, the server was packaged into an <strong>OCI-compliant Docker container</strong>
+    and deployed on Virginia Tech’s rlogin cluster.
+  </p>
+  <ul>
+    <li>Created a <code>Dockerfile</code> based on the provided course template.</li>
+    <li>Built the image with <code>docker build -t p4 .</code>, producing a ~1.3GB container image.</li>
+    <li>Ran the container detached with port forwarding:
+      <pre><code>docker run -d -e USER_NAME=&lt;user&gt; -e USER_PASS=&lt;password&gt; -e SECRET=&lt;secret&gt; -p 1XXXX:9999 p4</code></pre>
+    </li>
+    <li>Used <code>loginctl enable-linger</code> to keep the container running after logout.</li>
+    <li>Server became accessible via <code>https://&lt;host&gt;-&lt;port&gt;.cs3214.cs.vt.edu</code>.</li>
+  </ul>
+  <p>
+    For extra credit, the image could also be deployed to the department’s Kubernetes
+    discovery cluster, with ingress configuration for external access.
+  </p>
+</section>
+
 <!-- RESULTS -->
 <section class="section-card">
   <h2>Results</h2>
@@ -139,11 +161,6 @@ teaser: /assets/images/server.png
     <li>Secure authentication flow with stateless JWT cookies.</li>
     <li>Concurrent client support without blocking new connections.</li>
     <li>Video streaming with proper range responses for MP4 playback.</li>
+    <li>Successfully containerized and deployed the project using Docker and port forwarding on rlogin.</li>
   </ul>
-</section>
-
-<!-- DEMO -->
-<section class="section-card">
-  <h2>Demo</h2>
-  <p>Demo video recording coming soon.</p>
 </section>
