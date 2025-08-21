@@ -9,7 +9,7 @@ author_profile: false
 sidebar: []
 
 classes: project-page
-teaser: /assets/images/pserver.png
+teaser: /assets/images/server.png
 ---
 
 <!-- HERO -->
@@ -60,7 +60,7 @@ teaser: /assets/images/pserver.png
 <section class="section-card">
   <h2>Architecture</h2>
   <figure class="figure">
-    <img src="{{ '/assets/images/pserver.png' | relative_url }}" alt="Server architecture diagram">
+    <img src="{{ '/assets/images/server.png' | relative_url }}" alt="Server architecture diagram">
     <figcaption>
       Requests flow from client → server → routing layer. Endpoints include static files,
       private content (JWT-protected), authentication API, and video API with MP4 streaming.
