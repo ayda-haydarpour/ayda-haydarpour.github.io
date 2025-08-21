@@ -47,14 +47,14 @@ classes: home-landing
   </div>
 </section>
 
-<!-- PROJECTS — 3 WIDE CARDS -->
+<!-- PROJECTS — GRID -->
 <section class="section panel section-tight" id="projects">
   <div class="section-header">
     <h2>Projects</h2>
   </div>
 
   <div class="entries-grid--wide">
-    <!-- 1) REAL PROJECT: AWS Multi-Region Resume -->
+    <!-- 1) AWS Multi-Region Resume -->
     <article class="archive__item panel card--wide">
       <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/aws-multi-region-resume/' | relative_url }}">
         <img src="{{ '/assets/images/diagram.png' | relative_url }}" alt="AWS Multi-Region Resume architecture">
@@ -70,7 +70,7 @@ classes: home-landing
       </div>
     </article>
 
-    <!-- 2) REAL PROJECT: Serverless Event Signup -->
+    <!-- 2) Serverless Event Signup -->
     <article class="archive__item panel card--wide">
       <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">
         <img src="{{ '/assets/images/serverless.png' | relative_url }}" alt="AWS Serverless Event Signup architecture">
@@ -86,7 +86,7 @@ classes: home-landing
       </div>
     </article>
 
-    <!-- 3) NEW PROJECT: Custom Unix Shell -->
+    <!-- 3) Custom Unix Shell -->
     <article class="archive__item panel card--wide">
       <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/custom-shell/' | relative_url }}">
         <img src="{{ '/assets/images/cush.png' | relative_url }}" alt="Custom Unix Shell (C)">
@@ -97,15 +97,30 @@ classes: home-landing
         </h3>
         <p class="archive__item-excerpt">
           C-based Unix shell with parsing, pipelines, I/O redirection, job control, and robust signal handling.
-
         </p>
         <a class="btn btn--sm" href="{{ '/portfolio/custom-shell/' | relative_url }}">View</a>
+      </div>
+    </article>
+
+    <!-- 4) NEW: Personal Web & Video Server -->
+    <article class="archive__item panel card--wide">
+      <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/personal-server/' | relative_url }}">
+        <img src="{{ '/assets/images/pserver.png' | relative_url }}" alt="Personal Web & Video Server (C)">
+      </a>
+      <div class="card__body">
+        <h3 class="archive__item-title">
+          <a href="{{ '/portfolio/personal-server/' | relative_url }}">Personal Web & Video Server (C)</a>
+        </h3>
+        <p class="archive__item-excerpt">
+          Multithreaded HTTP/1.1 server in C: static files, JWT cookie auth, HTML5 fallback, MP4 range streaming, and IPv6 support.
+        </p>
+        <a class="btn btn--sm" href="{{ '/portfolio/personal-server/' | relative_url }}">View</a>
       </div>
     </article>
   </div>
 </section>
 
-<!-- MEDIA (unchanged) -->
+<!-- MEDIA -->
 <section class="section panel section-tight" id="media">
   <div class="section-header">
     <h2>Media & Recognition</h2>
