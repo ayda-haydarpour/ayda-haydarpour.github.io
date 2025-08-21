@@ -105,7 +105,7 @@ classes: home-landing
     <!-- 4) NEW: Personal Web & Video Server -->
     <article class="archive__item panel card--wide">
       <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/personal-server/' | relative_url }}">
-        <img src="{{ '/assets/images/pserver.png' | relative_url }}" alt="Personal Web & Video Server (C)">
+        <img src="{{ '/assets/images/server.png' | relative_url }}" alt="Personal Web & Video Server (C)">
       </a>
       <div class="card__body">
         <h3 class="archive__item-title">
