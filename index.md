@@ -121,7 +121,7 @@ classes: home-landing
     <!-- 5) TA Availability Kiosk (NEW) -->
     <article class="archive__item panel card--wide">
       <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/ta-kiosk/' | relative_url }}">
-        <img src="{{ '/assets/images/ta-kiosk.png' | relative_url }}" alt="TA Availability Kiosk (Raspberry Pi + Flask)">
+        <img src="{{ '/assets/images/kiosk.png' | relative_url }}" alt="TA Availability Kiosk (Raspberry Pi + Flask)">
       </a>
       <div class="card__body">
         <h3 class="archive__item-title">
