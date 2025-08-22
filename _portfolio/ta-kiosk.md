@@ -12,7 +12,7 @@ sidebar: []
 classes: project-page
 
 # Thumbnail/teaser for cards
-teaser: /assets/images/ta-kiosk.png
+teaser: /assets/images/kiosk.png
 ---
 
 <!-- HERO -->
@@ -62,7 +62,7 @@ teaser: /assets/images/ta-kiosk.png
       </div>
       <div class="fact-content">
         <h3>Focus</h3>
-        <p>Kiosk UX + Ops: Linux hardening, network setup (DHCP reservation/static IP, mDNS), autostart, logging</p>
+        <p>Kiosk UX + Ops; Linux hardening; network config (DHCP/static IP, mDNS); autostart; logging &amp; monitoring</p>
       </div>
     </div>
 
@@ -73,33 +73,33 @@ teaser: /assets/images/ta-kiosk.png
       </div>
       <div class="fact-content">
         <h3>Outcome</h3>
-        <p>Reliable on-prem kiosk: <code>Available Now</code>/<code>Later Today</code> badges, fast search/filter, one-tap email via QR</p>
+        <p>Reliable on-prem kiosk with <code>Available Now</code>/<code>Later Today</code> badges, fast search/filter, and one-tap email via QR</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- NETWORKING & IT HIGHLIGHTS -->
+<!-- NETWORKING & IT SETUP -->
 <section class="section-card">
-  <h2>Networking &amp; IT Highlights</h2>
+  <h2>Networking &amp; IT Setup</h2>
   <ul>
-    <li><strong>Addressing:</strong> Reserved DHCP lease on campus router (or static IP via <code>/etc/dhcpcd.conf</code>) for predictable reachability.</li>
-    <li><strong>Hostname &amp; mDNS:</strong> Set <code>ta-kiosk</code> and enabled Avahi for <code>http://ta-kiosk.local</code> discovery on the LAN.</li>
-    <li><strong>Reverse Proxy (optional):</strong> Nginx on :80 → proxy_pass to Gunicorn on :5000. Central place for headers, gzip, and logs.</li>
-    <li><strong>Firewall:</strong> <code>ufw</code> opened only required ports (80/443 if Nginx; 22 for SSH), default-deny inbound.</li>
-    <li><strong>System service:</strong> <code>systemd</code> unit manages Gunicorn (auto-restart on failure, start at boot).</li>
-    <li><strong>Logging/Monitoring:</strong> <code>journalctl -u</code> for app/service logs, basic health endpoint (200 check), and cron job to rotate QR cache.</li>
-    <li><strong>Secure access:</strong> SSH key-based auth, disabled password login, limited <code>sudo</code>, periodic updates via unattended-upgrades.</li>
-    <li><strong>Time sync:</strong> NTP enabled to keep clock accurate for status badges and log timelines.</li>
+    <li>Reserved static IP / DHCP lease for predictable kiosk access</li>
+    <li>mDNS discovery (<code>ta-kiosk.local</code>) for easy LAN access</li>
+    <li>Reverse proxy with Nginx for centralized logging &amp; headers</li>
+    <li>Firewall rules with <code>ufw</code> (default deny; allow 22/80/443 only)</li>
+    <li><code>systemd</code> service ensures Gunicorn auto-start &amp; recovery</li>
+    <li>SSH hardened with key-based auth; password login disabled</li>
+    <li>Health checks &amp; logs monitored via <code>journalctl</code> + cron jobs</li>
   </ul>
+  <p><em>Note:</em> Full configuration files and setup scripts are available in my GitHub repo.</p>
 </section>
 
 <!-- EXECUTION FLOW -->
 <section class="section-card">
   <h2>Execution Flow</h2>
   <figure class="figure">
-    <img src="{{ '/assets/images/ta-kiosk.png' | relative_url }}" alt="TA Kiosk UI / flow screenshot">
+    <img src="{{ '/assets/images/kiosk.png' | relative_url }}" alt="TA Kiosk UI / flow screenshot">
     <figcaption>
       Chromium in kiosk mode loads the Flask UI through Gunicorn (optionally via Nginx). JS computes availability badges;
       QR images resolve to mailto links. Static assets (CSS/QR) served from <code>/static</code>.
@@ -134,106 +134,20 @@ teaser: /assets/images/ta-kiosk.png
 <section class="section-card">
   <h2>Setup &amp; Run</h2>
   <ol>
-    <li><strong>OS &amp; packages:</strong> Raspberry Pi Imager (32-bit), Wi-Fi; <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code>; <code>sudo apt install python3 python3-venv python3-pip ufw avahi-daemon nginx -y</code></li>
+    <li><strong>OS &amp; packages:</strong> Raspberry Pi Imager, Wi-Fi; <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code>; <code>sudo apt install python3 python3-venv python3-pip ufw avahi-daemon nginx -y</code></li>
     <li><strong>Project:</strong> <code>python3 -m venv venv &amp;&amp; source venv/bin/activate</code>; <code>pip install flask qrcode gunicorn</code></li>
     <li><strong>Gunicorn (dev):</strong> <code>gunicorn -w 2 -b 0.0.0.0:5000 app:app</code></li>
     <li><strong>Firewall:</strong> <code>sudo ufw default deny incoming</code> · <code>sudo ufw allow 22</code> · <em>if using Nginx</em>: <code>sudo ufw allow 80</code> (<code>443</code> if TLS) · <code>sudo ufw enable</code></li>
   </ol>
 </section>
 
-<!-- CONFIGURATION SNIPPETS (IT/Networking) -->
-<section class="section-card">
-  <h2>Configuration Snippets (IT / Networking)</h2>
-
-  <h3>1) Static IP (or reserve via DHCP)</h3>
-  <p>Edit <code>/etc/dhcpcd.conf</code> (example on <code>wlan0</code>):</p>
-  <pre><code>interface wlan0
-static ip_address=192.168.1.50/24
-static routers=192.168.1.1
-static domain_name_servers=192.168.1.1 1.1.1.1
-</code></pre>
-
-  <h3>2) Hostname &amp; mDNS</h3>
-  <pre><code>sudo hostnamectl set-hostname ta-kiosk
-sudo systemctl enable --now avahi-daemon   # enables http://ta-kiosk.local
-</code></pre>
-
-  <h3>3) systemd service for Gunicorn</h3>
-  <pre><code># /etc/systemd/system/ta-kiosk.service
-[Unit]
-Description=TA Kiosk Flask (Gunicorn)
-After=network-online.target
-Wants=network-online.target
-
-[Service]
-User=pi
-WorkingDirectory=/home/pi/TAinfo
-Environment="PATH=/home/pi/TAinfo/venv/bin"
-ExecStart=/home/pi/TAinfo/venv/bin/gunicorn -w 2 -b 127.0.0.1:5000 app:app
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-</code></pre>
-  <pre><code>sudo systemctl daemon-reload
-sudo systemctl enable --now ta-kiosk
-</code></pre>
-
-  <h3>4) Nginx reverse proxy (optional but recommended)</h3>
-  <pre><code># /etc/nginx/sites-available/ta-kiosk
-server {
-  listen 80;
-  server_name ta-kiosk.local;
-
-  location / {
-    proxy_set_header Host $host;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_pass http://127.0.0.1:5000;
-  }
-
-  location /static/ {
-    alias /home/pi/TAinfo/static/;
-    access_log off;
-    expires 1h;
-  }
-}
-</code></pre>
-  <pre><code>sudo ln -s /etc/nginx/sites-available/ta-kiosk /etc/nginx/sites-enabled/
-sudo nginx -t &amp;&amp; sudo systemctl reload nginx
-</code></pre>
-
-  <h3>5) SSH hardening</h3>
-  <pre><code># Generate key on laptop, then copy to Pi
-ssh-keygen -t ed25519 -C "ayda@kiosk"
-ssh-copy-id pi@ta-kiosk.local
-
-# Disable password auth
-sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
-sudo systemctl reload ssh
-</code></pre>
-
-  <h3>6) Kiosk mode (Chromium)</h3>
-  <p>Launch Chromium to the local site on login (LXDE autostart):</p>
-  <pre><code># ~/.config/lxsession/LXDE-pi/autostart
-@/usr/bin/chromium-browser --kiosk --incognito http://ta-kiosk.local/
-</code></pre>
-
-  <h3>7) Health check &amp; logs</h3>
-  <pre><code># simple health check (returns 200)
-curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:5000/
-
-# service logs
-journalctl -u ta-kiosk -f
-</code></pre>
-</section>
-
 <!-- RESULTS -->
 <section class="section-card">
   <h2>Results</h2>
   <ul>
-    <li>Consistent, predictable access via <code>ta-kiosk.local</code> or static IP; reverse proxy centralizes logging.</li>
-    <li>Hardened Pi: key-only SSH, minimal open ports, auto-recovery via systemd on failures.</li>
-    <li>Instant search across TA name, class, days, and email with readable, kiosk-safe UI.</li>
+    <li>Consistent access via <code>ta-kiosk.local</code> or static IP; reverse proxy centralizes logs.</li>
+    <li>Hardened Pi: key-only SSH, minimal open ports, auto-recovery via systemd.</li>
+    <li>Instant search across TA name, class, days, and email with kiosk-safe UI.</li>
     <li>One-tap contact via QR; static assets cached for snappy loads.</li>
   </ul>
 </section>
@@ -243,7 +157,7 @@ journalctl -u ta-kiosk -f
   <h2>Next</h2>
   <ul>
     <li>TLS (self-signed or internal CA) and HSTS at Nginx.</li>
-    <li>Prometheus node_exporter + Grafana or simple <code>nginx_status</code> for basic metrics.</li>
+    <li>Prometheus node_exporter + Grafana or simple <code>nginx_status</code> for metrics.</li>
     <li>Admin page for roster edits and CSV import/export.</li>
   </ul>
 </section>
