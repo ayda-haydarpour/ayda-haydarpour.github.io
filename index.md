@@ -14,8 +14,9 @@ classes: home-landing
     <p class="hero-subtitle">Cloud &amp; AI-Focused Computer Science Student</p>
     <p class="hero-intro">
       I’m a fourth year Computer Science student specializing in <strong>cloud engineering</strong> and
-      <strong>AI-driven solutions</strong>, with a strong foundation in software development. <em>AWS Certified Solutions Architect – Associate.</em>
-      I design scalable, secure, and impactful systems using AWS and modern best practices.
+      <strong>AI-driven solutions</strong>, with a strong foundation in software development, and I’m an
+      <strong>AWS Certified Solutions Architect – Associate</strong>. I design scalable, secure, and impactful systems
+      using AWS and modern best practices.
     </p>
   </div>
 </section>
