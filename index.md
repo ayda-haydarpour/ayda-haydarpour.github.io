@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Ayda Haydarpour"
-excerpt: "Cloud & Security • AWS • Systems"
+excerpt: "Cloud & AI • AWS • Systems"
 author_profile: false
 sidebar: []
 classes: home-landing
@@ -11,10 +11,11 @@ classes: home-landing
 <section class="hero-landing">
   <div class="hero-inner">
     <h1 class="hero-title">Ayda Haydarpour</h1>
-    <p class="hero-subtitle">Cloud &amp; Security-Focused Computer Science Student</p>
+    <p class="hero-subtitle">Cloud &amp; AI-Focused Computer Science Student</p>
     <p class="hero-intro">
-      I’m a fourth year Computer Science student specializing in <strong>cloud architecture</strong>, <strong>cybersecurity</strong>, and
-      <strong>systems development</strong>. I design reliable, scalable solutions with a focus on AWS and security best practices.
+      I’m a fourth year Computer Science student specializing in <strong>cloud engineering</strong> and
+      <strong>AI-driven solutions</strong>, with a strong foundation in software development. <em>AWS Certified Solutions Architect – Associate.</em>
+      I design scalable, secure, and impactful systems using AWS and modern best practices.
     </p>
   </div>
 </section>
@@ -31,6 +32,10 @@ classes: home-landing
       <h3>Programming &amp; Scripting</h3>
       <ul>
         <li>Python, Java, C, Bash, JavaScript, HTML/CSS, SQL</li>
+      </ul>
+      <h3>AI &amp; Data</h3>
+      <ul>
+        <li>Machine Learning (TensorFlow, scikit-learn), Data analysis, K-Means clustering, SQL for data work</li>
       </ul>
     </div>
     <div class="skills-col">
