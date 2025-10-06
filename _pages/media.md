@@ -97,7 +97,7 @@ classes: media-page
   <ul class="media-list media-grid">
     <li class="media-card no-icon"><div class="media-text"><strong>France 24</strong><a class="btn btn--read" href="https://first.global/in-the-news/france-24-afghan-girls-robotics-team-design-their-future-in-qatar/" target="_blank" rel="noopener">Read</a></div></li>
     <li class="media-card no-icon"><div class="media-text"><strong>Macaroni Kid NRV</strong><a class="btn btn--read" href="https://nrv.macaronikid.com/articles/6411e7794a01232a11181e2e/ymca-at-virginia-tech-celebrates-women-in-innovation-and-technology" target="_blank" rel="noopener">Read</a></div></li>
-    <li class="media-card no-icon"><div class="media-text"><strong>RFI</strong><a class="btn btn--read" href="https://www.rfi.fr/en/business-and-tech/20210922-afghan-girls-robotics-team-design-their-future-in-qatar" target="_blank" rel="noopener">Read</a></div></li>
+    <li class="media-card no-icon"><div class="media-text"><strong>RFI</strong><a class="btn btn--read" href="https://www.rfi.org/en/business-and-tech/20210922-afghan-girls-robotics-team-design-their-future-in-qatar" target="_blank" rel="noopener">Read</a></div></li>
     <li class="media-card no-icon"><div class="media-text"><strong>Nippon.com</strong><a class="btn btn--read" href="https://www.nippon.com/en/news/reu20210827KBN2FR1JN/" target="_blank" rel="noopener">Read</a></div></li>
     <li class="media-card no-icon"><div class="media-text"><strong>Reuters</strong><a class="btn btn--read" href="https://www.reuters.com/world/asia-pacific/dont-abandon-afghanistan-pleads-member-afghan-all-female-robotics-team-2021-08-26/" target="_blank" rel="noopener">Read</a></div></li>
     <li class="media-card no-icon"><div class="media-text"><strong>Al-Fanar Media</strong><a class="btn btn--read" href="https://www.al-fanarmedia.org/2021/09/afghanistans-all-female-robotics-team-continues-building-robots-in-qatar/" target="_blank" rel="noopener">Read</a></div></li>
@@ -117,5 +117,20 @@ classes: media-page
         <a class="btn btn--read" href="https://www.wise-qatar.org/biography/ayda-haydarpour/" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
+
+    <li class="media-card no-icon">
+      <div class="media-text">
+        <strong>Impact Afghanistan — Brown University Profile</strong>
+        <a class="btn btn--read" href="https://impactafghanistan.brown.edu/about" target="_blank" rel="noopener">Read</a>
+      </div>
+    </li>
+
+    <li class="media-card no-icon">
+      <div class="media-text">
+        <strong>Power In Her Voice — Reimagining Agency</strong>
+        <a class="btn btn--read" href="https://powerinhervoicereimaginingagen.splashthat.com/" target="_blank" rel="noopener">View</a>
+      </div>
+    </li>
+
   </ul>
 </section>
