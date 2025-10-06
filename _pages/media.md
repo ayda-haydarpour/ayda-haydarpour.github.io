@@ -113,7 +113,7 @@ classes: media-page
   <ul class="media-list media-grid">
     <li class="media-card no-icon">
       <div class="media-text">
-        <strong>WISE — Ayda Haydarpour Biography</strong>
+        <strong>WISE - Ayda Haydarpour Biography</strong>
         <a class="btn btn--read" href="https://www.wise-qatar.org/biography/ayda-haydarpour/" target="_blank" rel="noopener">Read</a>
       </div>
     </li>
