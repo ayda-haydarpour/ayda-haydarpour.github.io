@@ -77,20 +77,21 @@ classes: home-landing
     </article>
 
     <!-- 2) Serverless Event Signup -->
-    <article class="archive__item panel card--wide">
-      <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">
-        <img src="{{ '/assets/images/serverless.png' | relative_url }}" alt="AWS Serverless Event Signup architecture">
-      </a>
-      <div class="card__body">
-        <h3 class="archive__item-title">
-          <a href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">Serverless Event Signup (AWS)</a>
-        </h3>
-        <p class="archive__item-excerpt">
-          Lambda + DynamoDB + SES with an S3 front-end and API Gateway - least-privilege IAM, CORS, and CloudWatch logs.
-        </p>
-        <a class="btn btn--sm" href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">View</a>
-      </div>
-    </article>
+<article class="archive__item panel card--wide">
+  <a class="archive__item-teaser teaser--wide" href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">
+    <img src="{{ '/assets/images/serverless.png' | relative_url }}" alt="AWS Serverless Event Signup architecture">
+  </a>
+  <div class="card__body">
+    <h3 class="archive__item-title">
+      <a href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">Serverless Event Signup (AWS + Bedrock)</a>
+    </h3>
+    <p class="archive__item-excerpt">
+      Lambda + DynamoDB + SES with an S3 front-end and API Gateway; now enhanced with AWS Bedrock (Claude 3 Haiku) for personalized, AI-generated confirmations.
+    </p>
+    <a class="btn btn--sm" href="{{ '/portfolio/aws-serverless-signup/' | relative_url }}">View</a>
+  </div>
+</article>
+
 
     <!-- 3) Custom Unix Shell -->
     <article class="archive__item panel card--wide">
