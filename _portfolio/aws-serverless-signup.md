@@ -1,9 +1,9 @@
 ---
-title: "Serverless Event Signup (AWS)"
+title: "Serverless Event Signup (AWS + Bedrock)"
 layout: single
 permalink: /portfolio/aws-serverless-signup/
-excerpt: "Lambda + DynamoDB + SES with an S3 front-end via API Gateway, least-privilege IAM, and CloudWatch logging."
-tags: [AWS, Lambda, DynamoDB, SES, API Gateway, S3]
+excerpt: "Lambda + DynamoDB + SES with an S3 front-end via API Gateway, Bedrock (Claude 3 Haiku) integration, and CloudWatch logging."
+tags: [AWS, Lambda, DynamoDB, SES, API Gateway, S3, Bedrock, GenAI]
 
 author_profile: false
 sidebar: []
@@ -15,11 +15,14 @@ teaser: /assets/images/serverless.png
 <!-- HERO -->
 <section class="project-hero">
   <div class="project-hero__inner">
-    <h1 class="project-hero__title">Serverless Event Signup</h1>
-    <p class="project-hero__tagline">Serverless data capture · Email confirmation · Least-privilege IAM</p>
+    <h1 class="project-hero__title">Serverless Event Signup (with AWS Bedrock)</h1>
+    <p class="project-hero__tagline">Serverless data capture · Email confirmation · AI-powered message generation</p>
 
     <p class="project-hero__intro">
-      A lean, serverless signup flow: API Gateway (HTTP) triggers Lambda to store registrations in DynamoDB and email confirmations via SES. The front end runs on S3, with CORS enabled, environment-based configuration, and CloudWatch logging.
+      A lean, serverless signup flow: API Gateway (HTTP) triggers Lambda to store registrations in DynamoDB and email confirmations via SES. 
+      The front end runs on S3 with CORS enabled, environment-based configuration, and CloudWatch logging. 
+      <!-- NEW -->
+      A later phase introduced AWS Bedrock and Claude 3 Haiku for personalized confirmation messages, showcasing how GenAI can enhance user communication in a fully serverless architecture.
     </p>
   </div>
 </section>
@@ -29,36 +32,27 @@ teaser: /assets/images/serverless.png
 <section class="facts">
   <div class="facts-grid">
 
-    <!-- Stack -->
     <div class="fact-card">
-      <div class="fact-icon" aria-hidden="true">
-        <img src="{{ '/assets/icons/briefcase.svg' | relative_url }}" alt="">
-      </div>
+      <div class="fact-icon"><img src="{{ '/assets/icons/briefcase.svg' | relative_url }}" alt=""></div>
       <div class="fact-content">
         <h3>Stack</h3>
-        <p>API Gateway (HTTP API), Lambda (Python 3.11), DynamoDB, SES, S3, CloudWatch</p>
+        <p>API Gateway (HTTP API), Lambda (Python 3.11), DynamoDB, SES, S3, CloudWatch, Bedrock (Claude 3 Haiku)</p>
       </div>
     </div>
 
-    <!-- Focus -->
     <div class="fact-card">
-      <div class="fact-icon" aria-hidden="true">
-        <img src="{{ '/assets/icons/shield-check.svg' | relative_url }}" alt="">
-      </div>
+      <div class="fact-icon"><img src="{{ '/assets/icons/shield-check.svg' | relative_url }}" alt=""></div>
       <div class="fact-content">
         <h3>Focus</h3>
-        <p>Least-privilege IAM, input validation, CORS, cost-efficient serverless</p>
+        <p>Least-privilege IAM, input validation, cost-efficient serverless, prompt engineering with Bedrock</p>
       </div>
     </div>
 
-    <!-- Outcome -->
     <div class="fact-card">
-      <div class="fact-icon" aria-hidden="true">
-        <img src="{{ '/assets/icons/rocket.svg' | relative_url }}" alt="">
-      </div>
+      <div class="fact-icon"><img src="{{ '/assets/icons/rocket.svg' | relative_url }}" alt=""></div>
       <div class="fact-content">
         <h3>Outcome</h3>
-        <p>One-click signup with email confirmation, durable writes, and clear observability</p>
+        <p>One-click signup with dynamic, AI-generated confirmations and full observability</p>
       </div>
     </div>
 
@@ -69,11 +63,11 @@ teaser: /assets/images/serverless.png
 <section class="section-card">
   <h2>Goals</h2>
   <ul>
-    <li>Capture registrations via a simple, secure front-end.</li>
+    <li>Capture event registrations via a secure, serverless front-end.</li>
     <li>Write each registration to DynamoDB with a unique ID and timestamp.</li>
-    <li>Send a confirmation email using Amazon SES.</li>
-    <li>Keep permissions tight with a dedicated Lambda execution role.</li>
-    <li>Enable easy hosting (S3) and clean CORS for browser calls.</li>
+    <li>Send confirmation emails through SES.</li>
+    <li><!-- NEW -->Experiment with generative AI using AWS Bedrock (Claude 3 Haiku) to tailor confirmation messages based on registration data.</li>
+    <li>Maintain least-privilege IAM and minimal operational overhead.</li>
   </ul>
 </section>
 
@@ -83,13 +77,13 @@ teaser: /assets/images/serverless.png
   <figure class="figure figure--dark">
     <img src="{{ '/assets/images/serverless.png' | relative_url }}" alt="Serverless Event Signup architecture diagram">
     <figcaption>
-      Browser → API Gateway → Lambda → DynamoDB (write), SES (email), CloudWatch (logs). Static front-end on S3.
+      Browser → API Gateway → Lambda → DynamoDB (write), SES (email), Bedrock (AI text), CloudWatch (logs). Static front-end on S3.
     </figcaption>
   </figure>
 
   <div class="callout callout--info">
-    <strong>Why this design?</strong> It’s fully managed, low-cost, and scales automatically. IAM is scoped to logs, a single DynamoDB table, and one SES identity. 
-    API Gateway provides CORS and a minimal proxy to Lambda.
+    <strong>Why this design?</strong> It’s fully managed, low-cost, and now enhanced with Bedrock for AI-driven personalization. 
+    IAM is scoped to logs, DynamoDB, SES, and a restricted Bedrock invocation policy.
   </div>
 </section>
 
@@ -102,18 +96,20 @@ teaser: /assets/images/serverless.png
     <span>Lambda (Python 3.11)</span>
     <span>DynamoDB</span>
     <span>Amazon SES</span>
+    <span>Amazon Bedrock</span>
     <span>S3 (static site)</span>
     <span>CloudWatch</span>
   </div>
 
   <h3>Key steps</h3>
   <ol>
-    <li><strong>DynamoDB:</strong> Create table <code>EventRegistrations</code> with partition key <code>id</code> (String), on-demand capacity.</li>
-    <li><strong>SES:</strong> Verify the “From” email (and the “To” email in sandbox).</li>
-    <li><strong>IAM:</strong> Create execution role <code>lambda-serverless-signup-exec</code> with inline policy for CloudWatch logs, <code>dynamodb:PutItem</code> on the table, and <code>ses:SendEmail</code> on the identity.</li>
-    <li><strong>Lambda:</strong> Python 3.11 function <code>submitRegistration</code> with env vars <code>TABLE_NAME</code>, <code>FROM_EMAIL</code>, <code>SES_REGION</code>. Validates inputs, writes to DynamoDB, sends email via SES, returns JSON with CORS headers.</li>
-    <li><strong>API Gateway:</strong> HTTP API with route <code>POST /register</code>, Lambda proxy integration, and CORS for <code>POST, OPTIONS</code>.</li>
-    <li><strong>Front-end:</strong> S3 static site hosting with <code>index.html</code> form that <code>fetch()</code>es the API.</li>
+    <li><strong>DynamoDB:</strong> Table <code>EventRegistrations</code> with partition key <code>id</code> (String).</li>
+    <li><strong>SES:</strong> Verified identities for sending sandbox-safe confirmations.</li>
+    <li><strong>Lambda:</strong> Python 3.11 function <code>submitRegistration</code> validates input, writes to DynamoDB, 
+        generates an AI-personalized email body by invoking Bedrock (Claude 3 Haiku), and sends via SES.</li>
+    <li><strong>API Gateway:</strong> Route <code>POST /register</code> (Lambda proxy integration) with CORS for <code>POST, OPTIONS</code>.</li>
+    <li><strong>Front-end:</strong> S3 static site with form submission using <code>fetch()</code> to the API.</li>
+    <li><strong>Monitoring:</strong> CloudWatch logs and metrics for both Lambda execution and Bedrock inference time.</li>
   </ol>
 </section>
 
@@ -121,11 +117,11 @@ teaser: /assets/images/serverless.png
 <section class="section-card">
   <h2>Results</h2>
   <ul>
-    <li><strong>Email confirmations</strong> delivered by SES (sandbox-safe).</li>
-    <li><strong>Durable writes</strong> in DynamoDB with UUID and timestamps.</li>
-    <li><strong>Operational visibility</strong> via CloudWatch logs (7-day retention).</li>
-    <li><strong>Low cost</strong> using serverless and on-demand capacity.</li>
-    <li><strong>Security first:</strong> IAM least-privilege and CORS.</li>
+    <li><strong>Email confirmations</strong> now feature AI-generated, context-aware text using Bedrock.</li>
+    <li><strong>Durable writes</strong> in DynamoDB with UUID + timestamps.</li>
+    <li><strong>Visibility</strong> via CloudWatch logs and metrics.</li>
+    <li><strong>Low cost</strong> due to on-demand serverless stack.</li>
+    <li><strong>Security first:</strong> Scoped IAM, sanitized inputs, and CORS.</li>
   </ul>
 </section>
 
@@ -134,7 +130,3 @@ teaser: /assets/images/serverless.png
   <h2>Demo</h2>
   {% include video id="zhtm_V9lOd0" provider="youtube" %}
 </section>
-
-
-
-
