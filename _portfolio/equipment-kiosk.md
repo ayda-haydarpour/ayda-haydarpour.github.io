@@ -50,7 +50,8 @@ teaser: /assets/images/equipment-kiosk.png
       </div>
       <div class="fact-content">
         <h3>Focus</h3>
-        <p>Kiosk UX, frontend systems design, client-side state, data synchronization</p>
+        <p>Kiosk UX, frontend systems design, client-side state management, data synchronization</p>
+
       </div>
     </div>
 
